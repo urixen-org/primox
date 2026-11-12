@@ -1,4 +1,5 @@
 # Mox - modern, secure, all-in-one email server
+
 ## Stay in control of your email and keep email decentralized!
 
 Complete email solution
@@ -29,9 +30,8 @@ See [Features](features/) for the details, including roadmap.
 
 The latest release is v0.0.17, released on 2026-08-19, see [release
 notes](https://github.com/urixen-org/primox/releases/tag/v0.0.17), [download
-binaries](https://github.com/urixen-org/primox/releases),
+binaries](https://beta.gobuilds.org/github.com/mjl-/mox@latest/linux-amd64-latest/),
 or see [all releases](https://github.com/urixen-org/primox/releases).
-
 
 ## News
 
@@ -55,7 +55,6 @@ or see [all releases](https://github.com/urixen-org/primox/releases).
 - 2023-11-22, [v0.0.8](https://github.com/urixen-org/primox/releases/tag/v0.0.8) released
 - 2023-09-24, [v0.0.7](https://github.com/urixen-org/primox/releases/tag/v0.0.7) released
 
-
 ## Quickstart demo
 
 Mox is real easy to set up. Get a machine, download the mox binary, run the
@@ -68,10 +67,9 @@ server. See the demo below, or continue reading at [Install](install/).
 </video>
 
 Not ready for a full setup yet? Try mox in less than a minute:
-[download](https://github.com/urixen-org/primox/releases) and run "mox
+[download](https://beta.gobuilds.org/github.com/mjl-/mox) and run "mox
 localserve". It serves a local-only SMTP/IMAP/Webmail/etc for testing and
 development. No setup required.
-
 
 ## Background
 
@@ -85,7 +83,6 @@ typically has large consequences.
 
 Mox is a modern email server that implements all modern email protocols in a
 single easy to use and maintain application.
-
 
 ## Sponsors
 
