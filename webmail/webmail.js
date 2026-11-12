@@ -1082,51 +1082,51 @@
 		return dom._class(className);
 	}, "css");
 	ensureCSS(":root", {
-		"--color": ["black", "#ddd"],
-		"--colorMild": ["#555", "#bbb"],
-		"--colorMilder": ["#666", "#aaa"],
-		"--backgroundColor": ["white", "#222"],
-		"--backgroundColorMild": ["#f8f8f8", "#080808"],
-		"--backgroundColorMilder": ["#999", "#777"],
-		"--borderColor": ["#ccc", "#333"],
-		"--mailboxesTopBackgroundColor": ["#fdfdf1", "#1a1200"],
-		"--msglistBackgroundColor": ["#f5ffff", "#04130d"],
-		"--boxShadow": ["0 0 20px rgba(0, 0, 0, 0.1)", "0px 0px 20px #000"],
-		"--buttonBackground": ["#eee", "#222"],
-		"--buttonBorderColor": ["#888", "#666"],
-		"--buttonHoverBackground": ["#ddd", "#333"],
-		"--overlayOpaqueBackgroundColor": ["#eee", "#011"],
-		"--overlayBackgroundColor": ["rgba(0, 0, 0, 0.2)", "rgba(0, 0, 0, 0.5)"],
-		"--popupColor": ["black", "white"],
-		"--popupBackgroundColor": ["white", "#313233"],
-		"--popupBorderColor": ["#ccc", "#555"],
-		"--highlightBackground": ["gold", "#a70167"],
-		"--highlightBorderColor": ["#8c7600", "#fd1fa7"],
-		"--highlightBackgroundHover": ["#ffbd21", "#710447"],
-		"--mailboxActiveBackground": ["linear-gradient(135deg, #ffc7ab 0%, #ffdeab 100%)", "linear-gradient(135deg, #b63d00 0%, #8c5a0d 100%)"],
-		"--mailboxHoverBackgroundColor": ["#eee", "#421f15"],
-		"--msgItemActiveBackground": ["linear-gradient(135deg, #8bc8ff 0%, #8ee5ff 100%)", "linear-gradient(135deg, #045cac 0%, #027ba0 100%)"],
-		"--msgItemHoverBackgroundColor": ["#eee", "#073348"],
-		"--msgItemFocusBorderColor": ["#2685ff", "#2685ff"],
-		"--buttonTristateOnBackground": ["#c4ffa9", "#277e00"],
-		"--buttonTristateOffBackground": ["#ffb192", "#bf410f"],
-		"--warningBackgroundColor": ["#ffca91", "#a85700"],
-		"--successBackground": ["#d2f791", "#1fa204"],
-		"--emphasisBackground": ["#666", "#aaa"],
+		// Tell the browser which color schemes we support, so built-in controls
+		// (scrollbars, form widgets) follow the light/dark styling below.
+		"colorScheme": ["light", "dark"],
+		"--color": ["#1f2328", "#e6edf3"],
+		"--colorMild": ["#57606a", "#9da7b3"],
+		"--colorMilder": ["#6e7781", "#8b949e"],
+		"--backgroundColor": ["#ffffff", "#0d1117"],
+		"--backgroundColorMild": ["#f6f8fa", "#161b22"],
+		"--backgroundColorMilder": ["#9aa4ae", "#6e7681"],
+		"--borderColor": ["#d0d7de", "#30363d"],
+		"--mailboxesTopBackgroundColor": ["#f6f8fa", "#161b22"],
+		"--msglistBackgroundColor": ["#ffffff", "#0d1117"],
+		"--boxShadow": ["0 3px 12px rgba(0, 0, 0, 0.15)", "0 3px 16px rgba(0, 0, 0, 0.6)"],
+		"--buttonBackground": ["#f6f8fa", "#21262d"],
+		"--buttonBorderColor": ["#d0d7de", "#30363d"],
+		"--buttonHoverBackground": ["#eef1f4", "#30363d"],
+		"--overlayOpaqueBackgroundColor": ["#ffffff", "#0d1117"],
+		"--overlayBackgroundColor": ["rgba(31, 35, 40, 0.28)", "rgba(1, 4, 9, 0.6)"],
+		"--popupColor": ["#1f2328", "#e6edf3"],
+		"--popupBackgroundColor": ["#ffffff", "#161b22"],
+		"--popupBorderColor": ["#d0d7de", "#30363d"],
+		"--highlightBackground": ["#ddf4ff", "#0d3a5c"],
+		"--highlightBorderColor": ["#54aeff", "#4493f8"],
+		"--highlightBackgroundHover": ["#b6e3ff", "#174a6e"],
+		"--mailboxActiveBackground": ["#ddf4ff", "#0d3a5c"],
+		"--mailboxHoverBackgroundColor": ["#eaeef2", "#21262d"],
+		"--msgItemActiveBackground": ["#ddf4ff", "#0d3a5c"],
+		"--msgItemHoverBackgroundColor": ["#eaeef2", "#21262d"],
+		"--msgItemFocusBorderColor": ["#0969da", "#4493f8"],
+		"--buttonTristateOnBackground": ["#dafbe1", "#033a16"],
+		"--buttonTristateOffBackground": ["#ffebe9", "#67060c"],
+		"--warningBackgroundColor": ["#fff8c5", "#4d3800"],
+		"--successBackground": ["#dafbe1", "#033a16"],
+		"--emphasisBackground": ["#57606a", "#8b949e"],
 		// For authentication/security results.
-		"--underlineGreen": "#50c40f",
-		"--underlineRed": "#e15d1c",
-		"--underlineBlue": "#09f",
-		"--underlineGrey": "#888",
-		"--quoted1Color": ["#03828f", "#71f2ff"],
-		// red
-		"--quoted2Color": ["#c7445c", "#ec4c4c"],
-		// green
-		"--quoted3Color": ["#417c10", "#73e614"],
-		// blue
-		"--scriptSwitchUnderlineColor": ["#dca053", "#e88f1e"],
-		"--linkColor": ["#096bc2", "#63b6ff"],
-		"--linkVisitedColor": ["#0704c1", "#c763ff"]
+		"--underlineGreen": ["#1a7f37", "#3fb950"],
+		"--underlineRed": ["#cf222e", "#f85149"],
+		"--underlineBlue": ["#0969da", "#4493f8"],
+		"--underlineGrey": ["#8c959f", "#6e7681"],
+		"--quoted1Color": ["#0969da", "#79c0ff"],
+		"--quoted2Color": ["#1a7f37", "#56d364"],
+		"--quoted3Color": ["#8250df", "#d2a8ff"],
+		"--scriptSwitchUnderlineColor": ["#bf8700", "#d29922"],
+		"--linkColor": ["#0969da", "#4493f8"],
+		"--linkVisitedColor": ["#8250df", "#d2a8ff"]
 	});
 	var styles = {
 		color: "var(--color)",
@@ -1195,7 +1195,7 @@
 	ensureCSS(".pad", { padding: ".5em" });
 	ensureCSS("iframe", { border: 0 });
 	ensureCSS("img, embed, video, iframe", { backgroundColor: "white", color: "black" });
-	ensureCSS("a", { color: styles.linkColor });
+	ensureCSS("a", { color: styles.linkColor, textUnderlineOffset: "2px" });
 	ensureCSS("a:visited", { color: styles.linkVisitedColor });
 	ensureCSS(".textmulti > *:nth-child(even)", { backgroundColor: ["#f4f4f4", "#141414"] });
 	ensureCSS(".textmulti > *", {
@@ -1440,17 +1440,19 @@
 		login: "7"
 	};
 	ensureCSS(".button", { display: "inline-block" });
-	ensureCSS("button, .button, select", { backgroundColor: styles.buttonBackground, border: "1px solid", borderColor: styles.buttonBorderColor, borderRadius: ".15em", padding: "0 .15em" });
+	ensureCSS("button, .button, select", { backgroundColor: styles.buttonBackground, border: "1px solid", borderColor: styles.buttonBorderColor, borderRadius: ".35em", padding: ".2em .55em", cursor: "pointer", transition: "background-color .12s ease, border-color .12s ease" });
 	ensureCSS("button, .button, select, a.button:visited", { color: styles.color });
-	ensureCSS("button.active, .button.active, button.active:hover, .button.active:hover", { backgroundColor: styles.highlightBackground });
+	ensureCSS("button.active, .button.active, button.active:hover, .button.active:hover", { backgroundColor: styles.highlightBackground, borderColor: styles.highlightBorderColor });
 	ensureCSS("button:hover:not(:disabled), .button:hover:not(:disabled), select:hover:not(:disabled)", { backgroundColor: styles.buttonHoverBackground });
 	ensureCSS("button.active:hover:not(:disabled), .button.active:hover:not(:disabled)", { backgroundColor: styles.highlightBackgroundHover });
-	ensureCSS("button:disabled, .button:disabled, select:disabled", { opacity: 0.5 });
-	ensureCSS("input, textarea", { backgroundColor: styles.backgroundColor, color: styles.color, border: "1px solid", borderColor: "#888", borderRadius: ".15em", padding: "0 .15em" });
+	ensureCSS("button:disabled, .button:disabled, select:disabled", { opacity: 0.5, cursor: "default" });
+	ensureCSS("input, textarea", { backgroundColor: styles.backgroundColor, color: styles.color, border: "1px solid", borderColor: ["#8c959f", "#484f58"], borderRadius: ".35em", padding: ".2em .45em" });
 	ensureCSS("input:hover:not(:disabled), textarea:hover:not(:disabled)", { borderColor: styles.colorMilder });
+	ensureCSS("input:focus, textarea:focus, select:focus", { outline: "2px solid", outlineColor: styles.linkColor, outlineOffset: "0px", borderColor: styles.linkColor });
+	ensureCSS("button:focus-visible, .button:focus-visible, a:focus-visible", { outline: "2px solid", outlineColor: styles.linkColor, outlineOffset: "2px" });
 	ensureCSS(".btngroup button, .btngroup .button", { borderRadius: 0, borderRightWidth: 0 });
-	ensureCSS(".btngroup button:first-child, .btngroup .button:first-child", { borderRadius: ".15em 0 0 .15em" });
-	ensureCSS(".btngroup button:last-child, .btngroup .button:last-child", { borderRadius: "0 .15em .15em 0", borderRightWidth: "1px" });
+	ensureCSS(".btngroup button:first-child, .btngroup .button:first-child", { borderRadius: ".35em 0 0 .35em" });
+	ensureCSS(".btngroup button:last-child, .btngroup .button:last-child", { borderRadius: "0 .35em .35em 0", borderRightWidth: "1px" });
 	var keywordButtonStyle = css("keywordButton", { cursor: "pointer" });
 	ensureCSS(".keywordButton:hover:not(:disabled)", { backgroundColor: styles.highlightBackgroundHover });
 	var yscrollStyle = css("yscroll", { overflowY: "scroll", position: "absolute", top: 0, bottom: 0, left: 0, right: 0 });
@@ -2599,7 +2601,7 @@
 			let rcptSecPromise = null;
 			let rcptSecAddr = "";
 			let rcptSecAborter = {};
-			let autosizeElem, inputElem, securityBar;
+			let autosizeElem, inputElem, securityBarSegments = [];
 			const fetchRecipientSecurity = /* @__PURE__ */ __name(() => {
 				if (!accountSettings?.ShowAddressSecurity) {
 					return;
@@ -2607,7 +2609,7 @@
 				if (inputElem.value === rcptSecAddr) {
 					return;
 				}
-				securityBar.style.borderImage = "";
+				securityBarSegments.forEach((seg) => seg.style.backgroundColor = "transparent");
 				rcptSecAddr = inputElem.value;
 				if (!inputElem.value) {
 					return;
@@ -2627,27 +2629,9 @@
 					return styles.underlineGrey;
 				}, "color");
 				const setBar = /* @__PURE__ */ __name((c0, c1, c2, c3, c4) => {
-					const stops = [
-						c0 + " 0%",
-						c0 + " 19%",
-						"transparent 19%",
-						"transparent 20%",
-						c1 + " 20%",
-						c1 + " 39%",
-						"transparent 39%",
-						"transparent 40%",
-						c2 + " 40%",
-						c2 + " 59%",
-						"transparent 59%",
-						"transparent 60%",
-						c3 + " 60%",
-						c3 + " 79%",
-						"transparent 79%",
-						"transparent 80%",
-						c4 + " 80%",
-						c4 + " 100%"
-					].join(", ");
-					securityBar.style.borderImage = "linear-gradient(to right, " + stops + ") 1";
+					[c0, c1, c2, c3, c4].forEach((c, i) => {
+						securityBarSegments[i].style.backgroundColor = c;
+					});
 				}, "setBar");
 				const aborter = {};
 				rcptSecAborter = aborter;
@@ -2728,11 +2712,14 @@
 				last.input.focus();
 				e.preventDefault();
 				e.stopPropagation();
-			}, "paste")), securityBar = dom.span(css("securitybar", {
-				margin: "0 1px",
-				borderBottom: "1.5px solid",
-				borderBottomColor: "transparent"
-			}))), " ", dom.clickbutton("-", style({ padding: "0 .25em" }), attr.arialabel("Remove address."), attr.title("Remove address."), /* @__PURE__ */ __name(function click() {
+			}, "paste")), dom.span(css("securitybar", {
+				display: "inline-flex",
+				gap: "1px",
+				width: "3em",
+				height: "3px",
+				verticalAlign: "middle",
+				marginLeft: "3px"
+			}), securityBarSegments = [0, 1, 2, 3, 4].map(() => dom.span(css("securitybarSegment", { flex: "1", backgroundColor: "transparent", borderRadius: "1px" }))))), " ", dom.clickbutton("-", style({ padding: "0 .25em" }), attr.arialabel("Remove address."), attr.title("Remove address."), /* @__PURE__ */ __name(function click() {
 				remove();
 				if (single && views.length === 0) {
 					btn.style.display = "";
@@ -3238,7 +3225,7 @@
 						name = first.substring(0, 8) + "/.../" + last.substring(0, 8);
 					}
 				}
-				const e = dom.span(css("msgItemMailbox", { padding: "0 .15em", marginLeft: ".15em", borderRadius: ".15em", fontWeight: "normal", fontSize: ".9em", whiteSpace: "nowrap", background: styles.backgroundColorMilder, color: ["white", "#ddd"], border: "1px solid", borderColor: styles.colorMilder }), isCollapsedKid ? css("msgItemMailboxCollapsed", { background: "#eee", color: "#333" }, true) : [], name === mb.Name ? [] : attr.title(mb.Name), name);
+				const e = dom.span(css("msgItemMailbox", { padding: "0 .15em", marginLeft: ".15em", borderRadius: ".15em", fontWeight: "normal", fontSize: ".9em", whiteSpace: "nowrap", background: styles.backgroundColorMilder, color: styles.color, border: "1px solid", borderColor: styles.colorMilder }), isCollapsedKid ? css("msgItemMailboxCollapsed", { background: "#eee", color: "#333" }, true) : [], name === mb.Name ? [] : attr.title(mb.Name), name);
 				mailboxtags.push(e);
 			}, "addMailboxTag");
 			const othermb = otherMailbox(m.MailboxID);
@@ -6398,7 +6385,7 @@
 		};
 		const topMailboxesStyle = css("topMailboxes", { backgroundColor: styles.mailboxesTopBackgroundColor });
 		css("searchbarActive", { background: styles.mailboxActiveBackground });
-		const webmailroot = dom.div(css("webmailRoot", { display: "flex", flexDirection: "column", alignContent: "stretch", height: "100dvh" }), dom.div(topMailboxesStyle, style({ display: "flex" }), attr.role("region"), attr.arialabel("Top bar"), topcomposeboxElem = dom.div(dom._class("pad"), style({ width: settings.mailboxesWidth + "px", textAlign: "center" }), composeBtn = dom.clickbutton("Compose", attr.title("Compose new email message."), /* @__PURE__ */ __name(function click() {
+		const webmailroot = dom.div(css("webmailRoot", { display: "flex", flexDirection: "column", alignContent: "stretch", height: "100dvh" }), dom.div(topMailboxesStyle, style({ display: "flex", borderBottom: "1px solid", borderBottomColor: styles.borderColor }), attr.role("region"), attr.arialabel("Top bar"), topcomposeboxElem = dom.div(dom._class("pad"), style({ width: settings.mailboxesWidth + "px", textAlign: "center" }), composeBtn = dom.clickbutton("Compose", attr.title("Compose new email message."), /* @__PURE__ */ __name(function click() {
 			shortcutCmd(cmdCompose, shortcuts);
 		}, "click"))), dom.div(dom._class("pad"), css("searchbarBox", { paddingLeft: 0, display: "flex", flexGrow: 1 }), searchbarElemBox = dom.search(style({ display: "flex", marginRight: ".5em" }), dom.form(style({ display: "flex", flexGrow: 1 }), searchbarElem = dom.input(attr.placeholder("Search..."), style({ position: "relative", width: "100%" }), attr.title("Search messages based on criteria like matching free-form text, in a mailbox, labels, addressees."), focusPlaceholder('word "with space" -notword mb:Inbox f:from@x.example t:rcpt@x.example start:2023-7-1 end:2023-7-8 s:"subject" a:images l:$Forwarded h:Reply-To:other@x.example minsize:500kb'), /* @__PURE__ */ __name(function click() {
 			cmdSearch();

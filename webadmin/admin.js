@@ -4079,9 +4079,73 @@
 			conf = await check(fieldset, client.WebserverConfigSave(conf, gatherConf()));
 		}, "submit")));
 	}, "webserver");
+	var navSections = [
+		{ key: "overview", text: "Overview", href: "#" },
+		{ key: "accounts", text: "Accounts", href: "#accounts" },
+		{ key: "queue", text: "Queue", href: "#queue" },
+		{ key: "webhookqueue", text: "Webhook queue", href: "#webhookqueue" },
+		{ group: "Reports" },
+		{ key: "dmarc-reports", text: "DMARC reports", href: "#dmarc/reports" },
+		{ key: "tlsrpt-reports", text: "TLS reports", href: "#tlsrpt/reports" },
+		{ group: "Operations" },
+		{ key: "mtasts", text: "MTA-STS policies", href: "#mtasts" },
+		{ key: "dmarc-evaluations", text: "DMARC evaluations", href: "#dmarc/evaluations" },
+		{ key: "tlsrpt-results", text: "TLS connection results", href: "#tlsrpt/results" },
+		{ key: "dnsbl", text: "DNSBL", href: "#dnsbl" },
+		{ group: "Configuration" },
+		{ key: "routes", text: "Routes", href: "#routes" },
+		{ key: "webserver", text: "Webserver", href: "#webserver" },
+		{ key: "config", text: "Files", href: "#config" },
+		{ key: "loglevels", text: "Log levels", href: "#loglevels" }
+	];
+	var activeNavKey = /* @__PURE__ */ __name((h) => {
+		if (h === "")
+			return "overview";
+		if (h === "accounts" || h.startsWith("accounts/"))
+			return "accounts";
+		if (h === "queue" || h.startsWith("queue/"))
+			return "queue";
+		if (h === "webhookqueue" || h.startsWith("webhookqueue/"))
+			return "webhookqueue";
+		if (h === "domains" || h.startsWith("domains/"))
+			return h.includes("/dmarc") ? "dmarc-reports" : "overview";
+		if (h === "dmarc" || h.startsWith("dmarc/"))
+			return h.startsWith("dmarc/evaluations") ? "dmarc-evaluations" : "dmarc-reports";
+		if (h === "tlsrpt" || h.startsWith("tlsrpt/"))
+			return h.startsWith("tlsrpt/results") ? "tlsrpt-results" : "tlsrpt-reports";
+		if (h === "mtasts")
+			return "mtasts";
+		if (h === "dnsbl")
+			return "dnsbl";
+		if (h === "routes")
+			return "routes";
+		if (h === "webserver")
+			return "webserver";
+		if (h === "config")
+			return "config";
+		if (h === "loglevels")
+			return "loglevels";
+		return "overview";
+	}, "activeNavKey");
 	var init = /* @__PURE__ */ __name(async () => {
 		let curhash;
 		[moxversion, moxgoos, moxgoarch] = await client.Version();
+		const navLinks = {};
+		const content = dom.div(dom._class("content"));
+		const sidebar = dom.div(dom._class("sidebar"), attr.role("navigation"), attr.arialabel("Main navigation"), dom.div(dom._class("brand"), "Mox Admin"), navSections.map((s) => s.group ? dom.div(dom._class("navGroup"), s.group) : navLinks[s.key] = dom.a(s.text, attr.href(s.href), dom._class("navLink"))));
+		dom._kids(page, dom.div(dom._class("app"), sidebar, content));
+		const setActive = /* @__PURE__ */ __name((h) => {
+			const active = activeNavKey(h);
+			for (const k in navLinks) {
+				const on = k === active;
+				navLinks[k].classList.toggle("active", on);
+				if (on) {
+					navLinks[k].setAttribute("aria-current", "page");
+				} else {
+					navLinks[k].removeAttribute("aria-current");
+				}
+			}
+		}, "setActive");
 		const hashChange = /* @__PURE__ */ __name(async () => {
 			if (curhash === window.location.hash) {
 				return;
@@ -4162,7 +4226,8 @@
 				if (window.moxBeforeDisplay) {
 					moxBeforeDisplay(root);
 				}
-				dom._kids(page, root);
+				dom._kids(content, root);
+				setActive(h);
 			} catch (err) {
 				console.log("error", err);
 				window.alert("Error: " + errmsg(err));

@@ -595,51 +595,51 @@
 		return dom._class(className);
 	}, "css");
 	ensureCSS(":root", {
-		"--color": ["black", "#ddd"],
-		"--colorMild": ["#555", "#bbb"],
-		"--colorMilder": ["#666", "#aaa"],
-		"--backgroundColor": ["white", "#222"],
-		"--backgroundColorMild": ["#f8f8f8", "#080808"],
-		"--backgroundColorMilder": ["#999", "#777"],
-		"--borderColor": ["#ccc", "#333"],
-		"--mailboxesTopBackgroundColor": ["#fdfdf1", "#1a1200"],
-		"--msglistBackgroundColor": ["#f5ffff", "#04130d"],
-		"--boxShadow": ["0 0 20px rgba(0, 0, 0, 0.1)", "0px 0px 20px #000"],
-		"--buttonBackground": ["#eee", "#222"],
-		"--buttonBorderColor": ["#888", "#666"],
-		"--buttonHoverBackground": ["#ddd", "#333"],
-		"--overlayOpaqueBackgroundColor": ["#eee", "#011"],
-		"--overlayBackgroundColor": ["rgba(0, 0, 0, 0.2)", "rgba(0, 0, 0, 0.5)"],
-		"--popupColor": ["black", "white"],
-		"--popupBackgroundColor": ["white", "#313233"],
-		"--popupBorderColor": ["#ccc", "#555"],
-		"--highlightBackground": ["gold", "#a70167"],
-		"--highlightBorderColor": ["#8c7600", "#fd1fa7"],
-		"--highlightBackgroundHover": ["#ffbd21", "#710447"],
-		"--mailboxActiveBackground": ["linear-gradient(135deg, #ffc7ab 0%, #ffdeab 100%)", "linear-gradient(135deg, #b63d00 0%, #8c5a0d 100%)"],
-		"--mailboxHoverBackgroundColor": ["#eee", "#421f15"],
-		"--msgItemActiveBackground": ["linear-gradient(135deg, #8bc8ff 0%, #8ee5ff 100%)", "linear-gradient(135deg, #045cac 0%, #027ba0 100%)"],
-		"--msgItemHoverBackgroundColor": ["#eee", "#073348"],
-		"--msgItemFocusBorderColor": ["#2685ff", "#2685ff"],
-		"--buttonTristateOnBackground": ["#c4ffa9", "#277e00"],
-		"--buttonTristateOffBackground": ["#ffb192", "#bf410f"],
-		"--warningBackgroundColor": ["#ffca91", "#a85700"],
-		"--successBackground": ["#d2f791", "#1fa204"],
-		"--emphasisBackground": ["#666", "#aaa"],
+		// Tell the browser which color schemes we support, so built-in controls
+		// (scrollbars, form widgets) follow the light/dark styling below.
+		"colorScheme": ["light", "dark"],
+		"--color": ["#1f2328", "#e6edf3"],
+		"--colorMild": ["#57606a", "#9da7b3"],
+		"--colorMilder": ["#6e7781", "#8b949e"],
+		"--backgroundColor": ["#ffffff", "#0d1117"],
+		"--backgroundColorMild": ["#f6f8fa", "#161b22"],
+		"--backgroundColorMilder": ["#9aa4ae", "#6e7681"],
+		"--borderColor": ["#d0d7de", "#30363d"],
+		"--mailboxesTopBackgroundColor": ["#f6f8fa", "#161b22"],
+		"--msglistBackgroundColor": ["#ffffff", "#0d1117"],
+		"--boxShadow": ["0 3px 12px rgba(0, 0, 0, 0.15)", "0 3px 16px rgba(0, 0, 0, 0.6)"],
+		"--buttonBackground": ["#f6f8fa", "#21262d"],
+		"--buttonBorderColor": ["#d0d7de", "#30363d"],
+		"--buttonHoverBackground": ["#eef1f4", "#30363d"],
+		"--overlayOpaqueBackgroundColor": ["#ffffff", "#0d1117"],
+		"--overlayBackgroundColor": ["rgba(31, 35, 40, 0.28)", "rgba(1, 4, 9, 0.6)"],
+		"--popupColor": ["#1f2328", "#e6edf3"],
+		"--popupBackgroundColor": ["#ffffff", "#161b22"],
+		"--popupBorderColor": ["#d0d7de", "#30363d"],
+		"--highlightBackground": ["#ddf4ff", "#0d3a5c"],
+		"--highlightBorderColor": ["#54aeff", "#4493f8"],
+		"--highlightBackgroundHover": ["#b6e3ff", "#174a6e"],
+		"--mailboxActiveBackground": ["#ddf4ff", "#0d3a5c"],
+		"--mailboxHoverBackgroundColor": ["#eaeef2", "#21262d"],
+		"--msgItemActiveBackground": ["#ddf4ff", "#0d3a5c"],
+		"--msgItemHoverBackgroundColor": ["#eaeef2", "#21262d"],
+		"--msgItemFocusBorderColor": ["#0969da", "#4493f8"],
+		"--buttonTristateOnBackground": ["#dafbe1", "#033a16"],
+		"--buttonTristateOffBackground": ["#ffebe9", "#67060c"],
+		"--warningBackgroundColor": ["#fff8c5", "#4d3800"],
+		"--successBackground": ["#dafbe1", "#033a16"],
+		"--emphasisBackground": ["#57606a", "#8b949e"],
 		// For authentication/security results.
-		"--underlineGreen": "#50c40f",
-		"--underlineRed": "#e15d1c",
-		"--underlineBlue": "#09f",
-		"--underlineGrey": "#888",
-		"--quoted1Color": ["#03828f", "#71f2ff"],
-		// red
-		"--quoted2Color": ["#c7445c", "#ec4c4c"],
-		// green
-		"--quoted3Color": ["#417c10", "#73e614"],
-		// blue
-		"--scriptSwitchUnderlineColor": ["#dca053", "#e88f1e"],
-		"--linkColor": ["#096bc2", "#63b6ff"],
-		"--linkVisitedColor": ["#0704c1", "#c763ff"]
+		"--underlineGreen": ["#1a7f37", "#3fb950"],
+		"--underlineRed": ["#cf222e", "#f85149"],
+		"--underlineBlue": ["#0969da", "#4493f8"],
+		"--underlineGrey": ["#8c959f", "#6e7681"],
+		"--quoted1Color": ["#0969da", "#79c0ff"],
+		"--quoted2Color": ["#1a7f37", "#56d364"],
+		"--quoted3Color": ["#8250df", "#d2a8ff"],
+		"--scriptSwitchUnderlineColor": ["#bf8700", "#d29922"],
+		"--linkColor": ["#0969da", "#4493f8"],
+		"--linkVisitedColor": ["#8250df", "#d2a8ff"]
 	});
 	var styles = {
 		color: "var(--color)",
@@ -708,7 +708,7 @@
 	ensureCSS(".pad", { padding: ".5em" });
 	ensureCSS("iframe", { border: 0 });
 	ensureCSS("img, embed, video, iframe", { backgroundColor: "white", color: "black" });
-	ensureCSS("a", { color: styles.linkColor });
+	ensureCSS("a", { color: styles.linkColor, textUnderlineOffset: "2px" });
 	ensureCSS("a:visited", { color: styles.linkVisitedColor });
 	ensureCSS(".textmulti > *:nth-child(even)", { backgroundColor: ["#f4f4f4", "#141414"] });
 	ensureCSS(".textmulti > *", {

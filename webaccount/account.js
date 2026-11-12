@@ -1956,6 +1956,69 @@ openssl pkcs12 \\
 	var init = /* @__PURE__ */ __name(async () => {
 		let curhash;
 		[moxversion, moxgoos, moxgoarch] = await client.Version();
+		const navLinks = {};
+		let sectionElems = [];
+		const content = dom.div(dom._class("content"));
+		const sidebar = dom.div(dom._class("sidebar"), attr.role("navigation"), attr.arialabel("Main navigation"));
+		dom._kids(page, dom.div(dom._class("app"), sidebar, content));
+		const setActive = /* @__PURE__ */ __name((id) => {
+			for (const k in navLinks) {
+				const on = k === id;
+				navLinks[k].classList.toggle("active", on);
+				if (on) {
+					navLinks[k].setAttribute("aria-current", "true");
+				} else {
+					navLinks[k].removeAttribute("aria-current");
+				}
+			}
+		}, "setActive");
+		const onScroll = /* @__PURE__ */ __name(() => {
+			if (sectionElems.length === 0) {
+				return;
+			}
+			let active = sectionElems[0].id;
+			for (const s of sectionElems) {
+				if (s.elem.getBoundingClientRect().top <= 120) {
+					active = s.id;
+				}
+			}
+			setActive(active);
+		}, "onScroll");
+		const buildNav = /* @__PURE__ */ __name((h) => {
+			for (const k in navLinks) {
+				delete navLinks[k];
+			}
+			sectionElems = [];
+			const kids = [dom.div(dom._class("brand"), "Mox Account")];
+			if (h === "") {
+				const items = [{ id: "top", text: "Account", elem: content }];
+				const h2s = Array.from(content.querySelectorAll("h2"));
+				h2s.forEach((el, i) => {
+					const id = "sec-" + i;
+					el.id = id;
+					items.push({ id, text: (el.textContent || "").trim() || "Section " + (i + 1), elem: el });
+				});
+				kids.push(items.map((it) => navLinks[it.id] = dom.clickbutton(it.text, dom._class("navLink"), /* @__PURE__ */ __name(function click(e) {
+					e.preventDefault();
+					it.elem.scrollIntoView({ block: "start" });
+					setActive(it.id);
+				}, "click"))));
+				kids.push(dom.div(dom._class("navGroup"), "Pages"));
+				kids.push(navLinks["loginattempts"] = dom.a("All login attempts", attr.href("#loginattempts"), dom._class("navLink")));
+				sectionElems = items;
+			} else {
+				kids.push(dom.a("\u2190 Back to account", attr.href("#"), dom._class("navLink")));
+				kids.push(navLinks["loginattempts"] = dom.a("All login attempts", attr.href("#loginattempts"), dom._class("navLink")));
+			}
+			dom._kids(sidebar, kids);
+			if (h === "loginattempts") {
+				setActive("loginattempts");
+			} else if (h === "") {
+				onScroll();
+			} else {
+				setActive("");
+			}
+		}, "buildNav");
 		const hashChange = /* @__PURE__ */ __name(async () => {
 			if (curhash === window.location.hash) {
 				return;
@@ -1980,7 +2043,8 @@ openssl pkcs12 \\
 				if (window.moxBeforeDisplay) {
 					moxBeforeDisplay(root);
 				}
-				dom._kids(page, root);
+				dom._kids(content, root);
+				buildNav(h);
 			} catch (err) {
 				console.log({ err });
 				window.alert("Error: " + errmsg(err));
@@ -1992,6 +2056,7 @@ openssl pkcs12 \\
 			page.classList.remove("loading");
 		}, "hashChange");
 		window.addEventListener("hashchange", hashChange);
+		window.addEventListener("scroll", onScroll, { passive: true });
 		hashChange();
 	}, "init");
 	window.addEventListener("load", async () => {

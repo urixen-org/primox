@@ -113,18 +113,20 @@ const zindexes = {
 
 // Buttons and input elements.
 ensureCSS('.button', {display: 'inline-block'})
-ensureCSS('button, .button, select', {backgroundColor: styles.buttonBackground, border: '1px solid', borderColor: styles.buttonBorderColor, borderRadius: '.15em', padding: '0 .15em'})
+ensureCSS('button, .button, select', {backgroundColor: styles.buttonBackground, border: '1px solid', borderColor: styles.buttonBorderColor, borderRadius: '.35em', padding: '.2em .55em', cursor: 'pointer', transition: 'background-color .12s ease, border-color .12s ease'})
 ensureCSS('button, .button, select, a.button:visited', {color: styles.color})
-ensureCSS('button.active, .button.active, button.active:hover, .button.active:hover', {backgroundColor: styles.highlightBackground})
+ensureCSS('button.active, .button.active, button.active:hover, .button.active:hover', {backgroundColor: styles.highlightBackground, borderColor: styles.highlightBorderColor})
 ensureCSS('button:hover:not(:disabled), .button:hover:not(:disabled), select:hover:not(:disabled)', {backgroundColor: styles.buttonHoverBackground})
 ensureCSS('button.active:hover:not(:disabled), .button.active:hover:not(:disabled)', {backgroundColor: styles.highlightBackgroundHover})
-ensureCSS('button:disabled, .button:disabled, select:disabled', {opacity: .5})
-ensureCSS('input, textarea', {backgroundColor: styles.backgroundColor, color: styles.color, border: '1px solid', borderColor: '#888', borderRadius: '.15em', padding: '0 .15em'})
+ensureCSS('button:disabled, .button:disabled, select:disabled', {opacity: .5, cursor: 'default'})
+ensureCSS('input, textarea', {backgroundColor: styles.backgroundColor, color: styles.color, border: '1px solid', borderColor: ['#8c959f', '#484f58'], borderRadius: '.35em', padding: '.2em .45em'})
 ensureCSS('input:hover:not(:disabled), textarea:hover:not(:disabled)', {borderColor: styles.colorMilder})
+ensureCSS('input:focus, textarea:focus, select:focus', {outline: '2px solid', outlineColor: styles.linkColor, outlineOffset: '0px', borderColor: styles.linkColor})
+ensureCSS('button:focus-visible, .button:focus-visible, a:focus-visible', {outline: '2px solid', outlineColor: styles.linkColor, outlineOffset: '2px'})
 
 ensureCSS('.btngroup button, .btngroup .button', {borderRadius: 0, borderRightWidth: 0 })
-ensureCSS('.btngroup button:first-child, .btngroup .button:first-child', {borderRadius: '.15em 0 0 .15em'})
-ensureCSS('.btngroup button:last-child, .btngroup .button:last-child', {borderRadius: '0 .15em .15em 0', borderRightWidth: '1px'})
+ensureCSS('.btngroup button:first-child, .btngroup .button:first-child', {borderRadius: '.35em 0 0 .35em'})
+ensureCSS('.btngroup button:last-child, .btngroup .button:last-child', {borderRadius: '0 .35em .35em 0', borderRightWidth: '1px'})
 
 const keywordButtonStyle = css('keywordButton', {cursor: 'pointer'})
 ensureCSS('.keywordButton:hover:not(:disabled)', {backgroundColor: styles.highlightBackgroundHover})
@@ -1737,7 +1739,7 @@ const compose = (opts: ComposeOptions, listMailboxes: listMailboxes, setLocation
 		let rcptSecAddr: string = ''
 		let rcptSecAborter: {abort?: () => void} = {}
 
-		let autosizeElem: HTMLElement, inputElem: HTMLInputElement, securityBar: HTMLElement
+		let autosizeElem: HTMLElement, inputElem: HTMLInputElement, securityBarSegments: HTMLElement[] = []
 
 		const fetchRecipientSecurity = () => {
 			if (!accountSettings?.ShowAddressSecurity) {
@@ -1746,7 +1748,7 @@ const compose = (opts: ComposeOptions, listMailboxes: listMailboxes, setLocation
 			if (inputElem.value === rcptSecAddr) {
 				return
 			}
-			securityBar.style.borderImage = ''
+			securityBarSegments.forEach(seg => seg.style.backgroundColor = 'transparent')
 			rcptSecAddr = inputElem.value
 			if (!inputElem.value) {
 				return
@@ -1768,14 +1770,9 @@ const compose = (opts: ComposeOptions, listMailboxes: listMailboxes, setLocation
 				return styles.underlineGrey
 			}
 			const setBar = (c0: string, c1: string, c2: string, c3: string, c4: string) => {
-				const stops = [
-					c0 + ' 0%', c0 + ' 19%', 'transparent 19%', 'transparent 20%',
-					c1 + ' 20%', c1 + ' 39%', 'transparent 39%', 'transparent 40%',
-					c2 + ' 40%', c2 + ' 59%', 'transparent 59%', 'transparent 60%',
-					c3 + ' 60%', c3 + ' 79%', 'transparent 79%', 'transparent 80%',
-					c4 + ' 80%', c4 + ' 100%',
-				].join(', ')
-				securityBar.style.borderImage = 'linear-gradient(to right, ' + stops + ') 1'
+				[c0, c1, c2, c3, c4].forEach((c, i) => {
+					securityBarSegments[i].style.backgroundColor = c
+				})
 			}
 
 			const aborter: {abort?: () => void} = {}
@@ -1878,12 +1875,16 @@ const compose = (opts: ComposeOptions, listMailboxes: listMailboxes, setLocation
 						e.stopPropagation()
 					},
 				),
-				securityBar=dom.span(
+				dom.span(
 					css('securitybar', {
-						margin: '0 1px',
-						borderBottom: '1.5px solid',
-						borderBottomColor: 'transparent',
+						display: 'inline-flex',
+						gap: '1px',
+						width: '3em',
+						height: '3px',
+						verticalAlign: 'middle',
+						marginLeft: '3px',
 					}),
+					securityBarSegments=[0, 1, 2, 3, 4].map(() => dom.span(css('securitybarSegment', {flex: '1', backgroundColor: 'transparent', borderRadius: '1px'}))),
 				),
 			),
 			' ',
@@ -2723,7 +2724,7 @@ const newMsgitemView = (mi: api.MessageItem, msglistView: MsglistView, otherMail
 				}
 			}
 			const e = dom.span(
-				css('msgItemMailbox', {padding: '0 .15em', marginLeft: '.15em', borderRadius: '.15em', fontWeight: 'normal', fontSize: '.9em', whiteSpace: 'nowrap', background: styles.backgroundColorMilder, color: ['white', '#ddd'], border: '1px solid', borderColor: styles.colorMilder}),
+				css('msgItemMailbox', {padding: '0 .15em', marginLeft: '.15em', borderRadius: '.15em', fontWeight: 'normal', fontSize: '.9em', whiteSpace: 'nowrap', background: styles.backgroundColorMilder, color: styles.color, border: '1px solid', borderColor: styles.colorMilder}),
 				isCollapsedKid ? css('msgItemMailboxCollapsed', {background: '#eee', color: '#333'}, true) : [],
 				name === mb.Name ? [] : attr.title(mb.Name),
 				name,
@@ -7035,7 +7036,7 @@ const init = async () => {
 	const webmailroot = dom.div(
 		css('webmailRoot', {display: 'flex', flexDirection: 'column', alignContent: 'stretch', height: '100dvh'}),
 		dom.div(topMailboxesStyle,
-			style({display: 'flex'}),
+			style({display: 'flex', borderBottom: '1px solid', borderBottomColor: styles.borderColor}),
 			attr.role('region'), attr.arialabel('Top bar'),
 			topcomposeboxElem=dom.div(dom._class('pad'),
 				style({width: settings.mailboxesWidth + 'px', textAlign: 'center'}),

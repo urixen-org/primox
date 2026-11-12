@@ -2005,6 +2005,74 @@ const init = async () => {
 
 	[moxversion, moxgoos, moxgoarch] = await client.Version()
 
+	// Persistent layout with a sidebar navigation that shows the active section.
+	const navLinks: {[key: string]: HTMLElement} = {}
+	let sectionElems: {id: string, elem: HTMLElement}[] = []
+	const content = dom.div(dom._class('content'))
+	const sidebar = dom.div(dom._class('sidebar'), attr.role('navigation'), attr.arialabel('Main navigation'))
+	dom._kids(page, dom.div(dom._class('app'), sidebar, content))
+
+	const setActive = (id: string) => {
+		for (const k in navLinks) {
+			const on = k === id
+			navLinks[k].classList.toggle('active', on)
+			if (on) {
+				navLinks[k].setAttribute('aria-current', 'true')
+			} else {
+				navLinks[k].removeAttribute('aria-current')
+			}
+		}
+	}
+
+	const onScroll = () => {
+		if (sectionElems.length === 0) {
+			return
+		}
+		let active = sectionElems[0].id
+		for (const s of sectionElems) {
+			if (s.elem.getBoundingClientRect().top <= 120) {
+				active = s.id
+			}
+		}
+		setActive(active)
+	}
+
+	const buildNav = (h: string) => {
+		for (const k in navLinks) {
+			delete navLinks[k]
+		}
+		sectionElems = []
+		const kids: ElemArg[] = [dom.div(dom._class('brand'), 'Mox Account')]
+		if (h === '') {
+			const items: {id: string, text: string, elem: HTMLElement}[] = [{id: 'top', text: 'Account', elem: content}]
+			const h2s = Array.from(content.querySelectorAll<HTMLElement>('h2'))
+			h2s.forEach((el, i) => {
+				const id = 'sec-'+i
+				el.id = id
+				items.push({id: id, text: (el.textContent || '').trim() || ('Section '+(i+1)), elem: el})
+			})
+			kids.push(items.map(it => navLinks[it.id] = dom.clickbutton(it.text, dom._class('navLink'), function click(e: MouseEvent) {
+				e.preventDefault()
+				it.elem.scrollIntoView({block: 'start'})
+				setActive(it.id)
+			})))
+			kids.push(dom.div(dom._class('navGroup'), 'Pages'))
+			kids.push(navLinks['loginattempts'] = dom.a('All login attempts', attr.href('#loginattempts'), dom._class('navLink')))
+			sectionElems = items
+		} else {
+			kids.push(dom.a('\u2190 Back to account', attr.href('#'), dom._class('navLink')))
+			kids.push(navLinks['loginattempts'] = dom.a('All login attempts', attr.href('#loginattempts'), dom._class('navLink')))
+		}
+		dom._kids(sidebar, kids)
+		if (h === 'loginattempts') {
+			setActive('loginattempts')
+		} else if (h === '') {
+			onScroll()
+		} else {
+			setActive('')
+		}
+	}
+
 	const hashChange = async () => {
 		if (curhash === window.location.hash) {
 			return
@@ -2029,7 +2097,8 @@ const init = async () => {
 			if ((window as any).moxBeforeDisplay) {
 				moxBeforeDisplay(root)
 			}
-			dom._kids(page, root)
+			dom._kids(content, root)
+			buildNav(h)
 		} catch (err) {
 			console.log({err})
 			window.alert('Error: ' + errmsg(err))
@@ -2041,6 +2110,7 @@ const init = async () => {
 		page.classList.remove('loading')
 	}
 	window.addEventListener('hashchange', hashChange)
+	window.addEventListener('scroll', onScroll, {passive: true})
 	hashChange()
 }
 
