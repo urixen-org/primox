@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"io/fs"
 	"net/http"
+	"os"
 	"path"
 	"strings"
 	"time"
@@ -23,6 +24,9 @@ import (
 type WebappStatic struct {
 	FS       fs.FS
 	Fallback string // defaults to "index.html"
+	// CustomStem, if set, injects $configdir/<stem>.css and .js into the fallback
+	// HTML (customizations by the admin).
+	CustomStem string
 }
 
 func (w *WebappStatic) fallback() string {
@@ -67,8 +71,24 @@ func (w *WebappStatic) serve(rw http.ResponseWriter, r *http.Request, name strin
 	}
 	if isFallback {
 		rw.Header().Set("Cache-Control", "no-cache")
+		if w.CustomStem != "" {
+			data = w.injectCustom(data)
+		}
 	} else {
 		rw.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
 	}
 	http.ServeContent(rw, r, name, mtime, bytes.NewReader(data))
+}
+
+// injectCustom inserts the admin's custom CSS/JS into the app shell.
+func (w *WebappStatic) injectCustom(data []byte) []byte {
+	css, _ := os.ReadFile(ConfigDirPath(w.CustomStem + ".css"))
+	js, _ := os.ReadFile(ConfigDirPath(w.CustomStem + ".js"))
+	if len(css) > 0 {
+		data = bytes.Replace(data, []byte("</head>"), []byte("<style>"+string(css)+"</style></head>"), 1)
+	}
+	if len(js) > 0 {
+		data = bytes.Replace(data, []byte("</body>"), []byte("<script>"+string(js)+"</script></body>"), 1)
+	}
+	return data
 }

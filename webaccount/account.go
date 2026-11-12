@@ -17,7 +17,6 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"path/filepath"
 	"runtime"
 	"strings"
 	"time"
@@ -47,20 +46,6 @@ var pkglog = mlog.New("webaccount", nil)
 
 //go:embed api.json
 var accountapiJSON []byte
-
-//go:embed account.html
-var accountHTML []byte
-
-//go:embed account.js
-var accountJS []byte
-
-var webaccountFile = &mox.WebappFile{
-	HTML:       accountHTML,
-	JS:         accountJS,
-	HTMLPath:   filepath.FromSlash("webaccount/account.html"),
-	JSPath:     filepath.FromSlash("webaccount/account.js"),
-	CustomStem: "webaccount",
-}
 
 var accountDoc = mustParseAPI("account", accountapiJSON)
 
@@ -211,11 +196,7 @@ func handle(apiHandler http.Handler, isForwarded bool, w http.ResponseWriter, r 
 	if r.URL.Path == "/" {
 		switch r.Method {
 		case "GET", "HEAD":
-			if svelteHandler != nil {
-				svelteHandler.ServeHTTP(w, r)
-			} else {
-				webaccountFile.Serve(ctx, log, w, r)
-			}
+			svelteHandler.ServeHTTP(w, r)
 		default:
 			http.Error(w, "405 - method not allowed - use get", http.StatusMethodNotAllowed)
 		}

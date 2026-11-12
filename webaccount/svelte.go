@@ -17,5 +17,5 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	svelteHandler = &mox.WebappStatic{FS: sub}
+	svelteHandler = &mox.WebappStatic{FS: sub, CustomStem: "webaccount"}
 }

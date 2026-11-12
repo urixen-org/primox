@@ -9,7 +9,7 @@ build0:
 	./gendoc.sh
 	CGO_ENABLED=0 ./genapidoc.sh
 	CGO_ENABLED=0 ./gents.sh webadmin/api.json webadmin/api.ts
-	CGO_ENABLED=0 ./gents.sh webaccount/api.json webaccount/api.ts
+	CGO_ENABLED=0 ./gents.sh webaccount/api.json webui/src/lib/api.ts
 	CGO_ENABLED=0 ./gents.sh webmail/api.json webmail/api.ts
 
 build1:
@@ -124,7 +124,7 @@ modernize:
 	CGO_ENABLED=0 go run golang.org/x/tools/gopls/internal/analysis/modernize/cmd/modernize@latest -fix -test ./...
 
 tswatch:
-	bash -c 'while true; do inotifywait -q -e close_write *.ts webadmin/*.ts webaccount/*.ts webmail/*.ts; make frontend; done'
+	bash -c 'while true; do inotifywait -q -e close_write *.ts webadmin/*.ts webmail/*.ts; make frontend; done'
 
 node_modules/.bin/tsc:
 	-mkdir -p node_modules/.bin
@@ -152,14 +152,11 @@ webmail/text.js: webmail/text.ts webmail/api.ts webmail/lib.ts lib.ts
 webadmin/admin.js: webadmin/admin.ts webadmin/api.ts lib.ts
 	./tsc.sh $@ webadmin/admin.ts webadmin/api.ts lib.ts
 
-webaccount/account.js: webaccount/account.ts webaccount/api.ts lib.ts
-	./tsc.sh $@ webaccount/account.ts webaccount/api.ts lib.ts
-
 webui/build/index.html: webui/package.json webui/package-lock.json webui/svelte.config.js webui/vite.config.ts webui/tsconfig.json webui/src/app.html $(shell find webui/src -type f)
 	@test -d webui/node_modules || (cd webui && npm ci --ignore-scripts)
 	cd webui && MOX_BASE_PATH=account npm run build
 
-frontend: node_modules/.bin/tsc webadmin/admin.js webaccount/account.js webmail/webmail.js webmail/msg.js webmail/text.js webui/build/index.html
+frontend: node_modules/.bin/tsc webadmin/admin.js webmail/webmail.js webmail/msg.js webmail/text.js webui/build/index.html
 
 install-apidiff:
 	CGO_ENABLED=0 go install golang.org/x/exp/cmd/apidiff@v0.0.0-20231206192017-f3f8817b8deb
