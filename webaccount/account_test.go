@@ -244,9 +244,11 @@ func TestAccount(t *testing.T) {
 
 	testHTTP("POST", "/import", httpHeaders{}, http.StatusForbidden, nil, nil)
 	testHTTP("POST", "/import", httpHeaders{hdrSessionBad}, http.StatusForbidden, nil, nil)
-	testHTTP("GET", "/export", httpHeaders{}, http.StatusForbidden, nil, nil)
-	testHTTP("GET", "/export", httpHeaders{hdrSessionBad}, http.StatusForbidden, nil, nil)
-	testHTTP("GET", "/export", httpHeaders{hdrSessionOK}, http.StatusForbidden, nil, nil)
+	// GET /export now serves the SPA shell (public). The export itself is a POST
+	// that requires authentication.
+	testHTTP("GET", "/export", httpHeaders{}, http.StatusOK, nil, nil)
+	testHTTP("GET", "/export", httpHeaders{hdrSessionBad}, http.StatusOK, nil, nil)
+	testHTTP("GET", "/export", httpHeaders{hdrSessionOK}, http.StatusOK, nil, nil)
 
 	// SetPassword needs the token.
 	sessionToken := store.SessionToken(strings.SplitN(sessionCookie.Value, " ", 2)[0])

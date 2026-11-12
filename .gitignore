@@ -27,3 +27,7 @@
 /upgrade*-verifydata.*.pprof
 /upgrade*-openaccounts.*.pprof
 /website/html/
+
+# SvelteKit frontend (webui)
+/webui/node_modules/
+/webui/.svelte-kit/

@@ -155,7 +155,11 @@ webadmin/admin.js: webadmin/admin.ts webadmin/api.ts lib.ts
 webaccount/account.js: webaccount/account.ts webaccount/api.ts lib.ts
 	./tsc.sh $@ webaccount/account.ts webaccount/api.ts lib.ts
 
-frontend: node_modules/.bin/tsc webadmin/admin.js webaccount/account.js webmail/webmail.js webmail/msg.js webmail/text.js
+webui/build/index.html: webui/package.json webui/package-lock.json webui/svelte.config.js webui/vite.config.ts webui/tsconfig.json webui/src/app.html $(shell find webui/src -type f)
+	@test -d webui/node_modules || (cd webui && npm ci --ignore-scripts)
+	cd webui && MOX_BASE_PATH=account npm run build
+
+frontend: node_modules/.bin/tsc webadmin/admin.js webaccount/account.js webmail/webmail.js webmail/msg.js webmail/text.js webui/build/index.html
 
 install-apidiff:
 	CGO_ENABLED=0 go install golang.org/x/exp/cmd/apidiff@v0.0.0-20231206192017-f3f8817b8deb

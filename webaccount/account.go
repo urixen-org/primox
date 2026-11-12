@@ -211,7 +211,11 @@ func handle(apiHandler http.Handler, isForwarded bool, w http.ResponseWriter, r 
 	if r.URL.Path == "/" {
 		switch r.Method {
 		case "GET", "HEAD":
-			webaccountFile.Serve(ctx, log, w, r)
+			if svelteHandler != nil {
+				svelteHandler.ServeHTTP(w, r)
+			} else {
+				webaccountFile.Serve(ctx, log, w, r)
+			}
 		default:
 			http.Error(w, "405 - method not allowed - use get", http.StatusMethodNotAllowed)
 		}
@@ -220,6 +224,21 @@ func handle(apiHandler http.Handler, isForwarded bool, w http.ResponseWriter, r 
 		switch r.Method {
 		case "GET", "HEAD":
 			mox.LicensesWrite(w)
+		default:
+			http.Error(w, "405 - method not allowed - use get", http.StatusMethodNotAllowed)
+		}
+		return
+	}
+
+	// When the Svelte SPA is enabled (build tag "moxwebui"), serve it for all
+	// non-API paths not handled explicitly below: hashed assets and client-side
+	// routes. The shell is public; data is fetched through the authenticated API.
+	// Exclude the POST-only data endpoints; their GET requests serve the SPA page.
+	isPostEndpoint := (r.URL.Path == "/export" || r.URL.Path == "/import") && r.Method != "GET" && r.Method != "HEAD"
+	if svelteHandler != nil && !strings.HasPrefix(r.URL.Path, "/api/") && !isPostEndpoint {
+		switch r.Method {
+		case "GET", "HEAD":
+			svelteHandler.ServeHTTP(w, r)
 		default:
 			http.Error(w, "405 - method not allowed - use get", http.StatusMethodNotAllowed)
 		}
