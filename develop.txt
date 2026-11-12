@@ -208,7 +208,7 @@ README.md is duplicated on the website, often more elaborate and possibly with
 a slightly less technical audience.  The website should also mostly be readable
 through the markdown in the git repo.
 
-Large files (images/videos) are in https://github.com/mjl-/mox-website-files to
+Large files (images/videos) are in https://github.com/urixen-org/primox-website-files to
 keep the repository reasonably sized.
 
 The public website may serve the content from the "website" branch. After a

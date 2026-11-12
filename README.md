@@ -116,7 +116,7 @@ Plan 9.
 Although not recommended, you can also run mox with docker image
 `r.xmox.nl/mox`, with tags like `v0.0.1` and `v0.0.1-go1.20.1-alpine3.17.2`, see
 https://r.xmox.nl/r/mox/.  See
-https://github.com/mjl-/mox/blob/main/docker-compose.yml to get started.
+https://github.com/urixen-org/primox/blob/main/docker-compose.yml to get started.
 
 New docker images aren't (automatically) generated for new Go runtime/compile
 releases.
@@ -297,7 +297,7 @@ MIT license (like mox), and have the rights to do so.
 Join #mox on irc.oftc.net, or #mox:matrix.org (https://matrix.to/#/#mox:matrix.org),
 or #mox on the "Gopher slack".
 
-For bug reports, please file an issue at https://github.com/mjl-/mox/issues/new.
+For bug reports, please file an issue at https://github.com/urixen-org/primox/issues/new.
 
 ## How do I change my password?
 
@@ -340,8 +340,8 @@ https://updates.xmox.nl/changelog.
 
 You can also monitor newly added releases on this repository with the github
 "watch" feature, or use the github RSS feed for tags
-(https://github.com/mjl-/mox/tags.atom) or releases
-(https://github.com/mjl-/mox/releases.atom), or monitor the docker images.
+(https://github.com/urixen-org/primox/tags.atom) or releases
+(https://github.com/urixen-org/primox/releases.atom), or monitor the docker images.
 
 Keep in mind you have a responsibility to keep the internet-connected software
 you run up to date and secure.

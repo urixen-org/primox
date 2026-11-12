@@ -20,7 +20,7 @@ software, and is fuzz-tested. The code is well-documented and cross-referenced
 with the relevant standards (RFC's).
 
 Open Source
-: Mox is an open source project, [source code](https://github.com/mjl-/mox) is
+: Mox is an open source project, [source code](https://github.com/urixen-org/primox) is
 MIT-licensed.
 
 See [Features](features/) for the details, including roadmap.
@@ -28,32 +28,32 @@ See [Features](features/) for the details, including roadmap.
 ## Latest release
 
 The latest release is v0.0.17, released on 2026-08-19, see [release
-notes](https://github.com/mjl-/mox/releases/tag/v0.0.17), [download
+notes](https://github.com/urixen-org/primox/releases/tag/v0.0.17), [download
 binaries](https://beta.gobuilds.org/github.com/mjl-/mox@v0.0.17/linux-amd64-latest/),
-or see [all releases](https://github.com/mjl-/mox/releases).
+or see [all releases](https://github.com/urixen-org/primox/releases).
 
 
 ## News
 
-- 2026-08-19, [v0.0.17](https://github.com/mjl-/mox/releases/tag/v0.0.17) released
-- 2026-08-18, [v0.0.16](https://github.com/mjl-/mox/releases/tag/v0.0.16) released
-- 2025-04-18, [v0.0.15](https://github.com/mjl-/mox/releases/tag/v0.0.15) released
-- 2025-01-20, [v0.0.14](https://github.com/mjl-/mox/releases/tag/v0.0.14) released
+- 2026-08-19, [v0.0.17](https://github.com/urixen-org/primox/releases/tag/v0.0.17) released
+- 2026-08-18, [v0.0.16](https://github.com/urixen-org/primox/releases/tag/v0.0.16) released
+- 2025-04-18, [v0.0.15](https://github.com/urixen-org/primox/releases/tag/v0.0.15) released
+- 2025-01-20, [v0.0.14](https://github.com/urixen-org/primox/releases/tag/v0.0.14) released
 - 2025-01-20, There will be another [talk about
   mox](https://fosdem.org/2025/schedule/event/fosdem-2025-5364-mox-and-simplifying-mail-server-setup-management/)
   at [FOSDEM 2025](https://fosdem.org/2025/) (Feb 1 & 2) in the ["Modern Email"
   devroom](https://fosdem.org/2025/schedule/track/modern-email/).
-- 2024-11-06, [v0.0.13](https://github.com/mjl-/mox/releases/tag/v0.0.13) released
-- 2024-10-06, [v0.0.12](https://github.com/mjl-/mox/releases/tag/v0.0.12) released
-- 2024-04-30, [v0.0.11](https://github.com/mjl-/mox/releases/tag/v0.0.11) released
-- 2024-03-09, [v0.0.10](https://github.com/mjl-/mox/releases/tag/v0.0.10) released
-- 2024-01-09, [v0.0.9](https://github.com/mjl-/mox/releases/tag/v0.0.9) released
+- 2024-11-06, [v0.0.13](https://github.com/urixen-org/primox/releases/tag/v0.0.13) released
+- 2024-10-06, [v0.0.12](https://github.com/urixen-org/primox/releases/tag/v0.0.12) released
+- 2024-04-30, [v0.0.11](https://github.com/urixen-org/primox/releases/tag/v0.0.11) released
+- 2024-03-09, [v0.0.10](https://github.com/urixen-org/primox/releases/tag/v0.0.10) released
+- 2024-01-09, [v0.0.9](https://github.com/urixen-org/primox/releases/tag/v0.0.9) released
 - 2023-12-08, There will be a
   [talk about mox](https://fosdem.org/2024/schedule/event/fosdem-2024-2261--servers-mox-a-modern-full-featured-mail-server/)
   in the ["Modern Email" devroom](https://fosdem.org/2024/schedule/track/modern-email/)
   at [FOSDEM 2024](https://fosdem.org/2024/) (Feb 3 & 4, Brussels). See you there!
-- 2023-11-22, [v0.0.8](https://github.com/mjl-/mox/releases/tag/v0.0.8) released
-- 2023-09-24, [v0.0.7](https://github.com/mjl-/mox/releases/tag/v0.0.7) released
+- 2023-11-22, [v0.0.8](https://github.com/urixen-org/primox/releases/tag/v0.0.8) released
+- 2023-09-24, [v0.0.7](https://github.com/urixen-org/primox/releases/tag/v0.0.7) released
 
 
 ## Quickstart demo

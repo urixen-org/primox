@@ -71,7 +71,7 @@ Plan 9.
 Although not recommended, you can also run mox with docker image
 `r.xmox.nl/mox`, with tags like `v0.0.1` and `v0.0.1-go1.20.1-alpine3.17.2`, see
 https://r.xmox.nl/r/mox/.  See
-https://github.com/mjl-/mox/blob/main/docker-compose.yml to get started.
+https://github.com/urixen-org/primox/blob/main/docker-compose.yml to get started.
 
 New docker images aren't (automatically) generated for new Go runtime/compile
 releases.
@@ -96,4 +96,4 @@ reference](../commands/) for a list of commands, and their documentation.
 
 If you have a question, see the [FAQ](../faq/). If your question remains
 unanswered, please ask it on the [issue
-tracker](https://github.com/mjl-/mox/issues/new).
+tracker](https://github.com/urixen-org/primox/issues/new).

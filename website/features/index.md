@@ -519,7 +519,7 @@ Mox provides [prometheus metrics](https://prometheus.io/docs/concepts/metric_typ
 for monitoring.  A standard set of application metrics are exposed: Open file
 descriptors, memory/cpu usage, etc. Mox also exposes metrics specific to its
 internals. See the example
-[prometheus rules](https://github.com/mjl-/mox/blob/main/prometheus.rules) in
+[prometheus rules](https://github.com/urixen-org/primox/blob/main/prometheus.rules) in
 the repository.
 
 Mox has configurable log levels, per
@@ -550,4 +550,4 @@ updating a dependency. Making the required changes is typically fairly
 straightforward.
 
 Incompatible changes compared to previous releases are tracked in the git
-repository, see [apidiff/](https://github.com/mjl-/mox/tree/main/apidiff).
+repository, see [apidiff/](https://github.com/urixen-org/primox/tree/main/apidiff).
