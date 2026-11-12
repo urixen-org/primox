@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/webui"
+	webuiaccount "github.com/mjl-/mox/webui/account"
 )
 
 // svelteHandler serves the SvelteKit SPA embedded in the binary. It is always
@@ -13,7 +13,7 @@ import (
 var svelteHandler http.Handler
 
 func init() {
-	sub, err := fs.Sub(webui.Build, "build")
+	sub, err := fs.Sub(webuiaccount.Build, "build")
 	if err != nil {
 		panic(err)
 	}

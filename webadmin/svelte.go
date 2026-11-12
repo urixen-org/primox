@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/mjl-/mox/mox-"
-	webuiadmin "github.com/mjl-/mox/webui-admin"
+	webuiadmin "github.com/mjl-/mox/webui/admin"
 )
 
 // svelteHandler serves the admin SvelteKit SPA embedded in the binary.

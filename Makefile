@@ -149,15 +149,15 @@ webmail/msg.js: webmail/msg.ts webmail/api.ts webmail/lib.ts lib.ts
 webmail/text.js: webmail/text.ts webmail/api.ts webmail/lib.ts lib.ts
 	./tsc.sh $@ webmail/text.ts webmail/api.ts webmail/lib.ts lib.ts
 
-webui/build/index.html: webui/package.json webui/package-lock.json webui/svelte.config.js webui/vite.config.ts webui/tsconfig.json webui/src/app.html $(shell find webui/src -type f)
-	@test -d webui/node_modules || (cd webui && npm ci --ignore-scripts)
-	cd webui && MOX_BASE_PATH=account npm run build
+webui/account/build/index.html: webui/account/package.json webui/account/svelte.config.js webui/account/vite.config.ts webui/account/tsconfig.json webui/account/src/app.html $(shell find webui/account/src webui/shared -type f)
+	@test -d webui/account/node_modules || (cd webui/account && npm ci --ignore-scripts)
+	cd webui/account && MOX_BASE_PATH=account npm run build
 
-webui-admin/build/index.html: webui-admin/package.json webui-admin/package-lock.json webui-admin/svelte.config.js webui-admin/vite.config.ts webui-admin/tsconfig.json webui-admin/src/app.html $(shell find webui-admin/src -type f)
-	@test -d webui-admin/node_modules || (cd webui-admin && npm ci --ignore-scripts)
-	cd webui-admin && MOX_BASE_PATH=admin npm run build
+webui/admin/build/index.html: webui/admin/package.json webui/admin/svelte.config.js webui/admin/vite.config.ts webui/admin/tsconfig.json webui/admin/src/app.html $(shell find webui/admin/src webui/shared -type f)
+	@test -d webui/admin/node_modules || (cd webui/admin && npm ci --ignore-scripts)
+	cd webui/admin && MOX_BASE_PATH=admin npm run build
 
-frontend: node_modules/.bin/tsc webmail/webmail.js webmail/msg.js webmail/text.js webui/build/index.html webui-admin/build/index.html
+frontend: node_modules/.bin/tsc webmail/webmail.js webmail/msg.js webmail/text.js webui/account/build/index.html webui/admin/build/index.html
 
 install-apidiff:
 	CGO_ENABLED=0 go install golang.org/x/exp/cmd/apidiff@v0.0.0-20231206192017-f3f8817b8deb
