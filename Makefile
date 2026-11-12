@@ -156,7 +156,11 @@ webui/build/index.html: webui/package.json webui/package-lock.json webui/svelte.
 	@test -d webui/node_modules || (cd webui && npm ci --ignore-scripts)
 	cd webui && MOX_BASE_PATH=account npm run build
 
-frontend: node_modules/.bin/tsc webadmin/admin.js webmail/webmail.js webmail/msg.js webmail/text.js webui/build/index.html
+webui-admin/build/index.html: webui-admin/package.json webui-admin/package-lock.json webui-admin/svelte.config.js webui-admin/vite.config.ts webui-admin/tsconfig.json webui-admin/src/app.html $(shell find webui-admin/src -type f)
+	@test -d webui-admin/node_modules || (cd webui-admin && npm ci --ignore-scripts)
+	cd webui-admin && MOX_BASE_PATH=admin npm run build
+
+frontend: node_modules/.bin/tsc webadmin/admin.js webmail/webmail.js webmail/msg.js webmail/text.js webui/build/index.html webui-admin/build/index.html
 
 install-apidiff:
 	CGO_ENABLED=0 go install golang.org/x/exp/cmd/apidiff@v0.0.0-20231206192017-f3f8817b8deb

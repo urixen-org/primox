@@ -162,7 +162,7 @@ func handle(apiHandler http.Handler, isForwarded bool, w http.ResponseWriter, r 
 	if r.URL.Path == "/" {
 		switch r.Method {
 		case "GET", "HEAD":
-			webadminFile.Serve(ctx, log, w, r)
+			svelteHandler.ServeHTTP(w, r)
 		default:
 			http.Error(w, "405 - method not allowed - use get", http.StatusMethodNotAllowed)
 		}
@@ -172,6 +172,18 @@ func handle(apiHandler http.Handler, isForwarded bool, w http.ResponseWriter, r 
 		case "GET", "HEAD":
 			w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 			mox.LicensesWrite(w)
+		default:
+			http.Error(w, "405 - method not allowed - use get", http.StatusMethodNotAllowed)
+		}
+		return
+	}
+
+	// Serve the Svelte SPA for non-API paths (hashed assets and client routes). The
+	// shell is public; data is fetched through the authenticated API.
+	if svelteHandler != nil && !strings.HasPrefix(r.URL.Path, "/api/") {
+		switch r.Method {
+		case "GET", "HEAD":
+			svelteHandler.ServeHTTP(w, r)
 		default:
 			http.Error(w, "405 - method not allowed - use get", http.StatusMethodNotAllowed)
 		}
