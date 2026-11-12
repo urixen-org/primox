@@ -5,8 +5,8 @@ import (
 	"net"
 	"testing"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
 )
 
 func TestDNSBL(t *testing.T) {

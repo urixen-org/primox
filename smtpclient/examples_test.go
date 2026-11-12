@@ -9,9 +9,9 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/sasl"
-	"github.com/mjl-/mox/smtpclient"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/sasl"
+	"github.com/urixen-org/primox/smtpclient"
 )
 
 func ExampleClient() {

@@ -13,8 +13,8 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/store"
 )
 
 // If last search output was this long ago, we write an untagged inprogress

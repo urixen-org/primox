@@ -22,11 +22,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/sasl"
-	"github.com/mjl-/mox/scram"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/sasl"
+	"github.com/urixen-org/primox/scram"
+	"github.com/urixen-org/primox/smtp"
 )
 
 var zerohost dns.Domain

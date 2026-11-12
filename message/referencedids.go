@@ -3,7 +3,7 @@ package message
 import (
 	"strings"
 
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/smtp"
 )
 
 // ReferencedIDs returns the Message-IDs referenced from the References header(s),

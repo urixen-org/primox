@@ -8,10 +8,10 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/store"
 )
 
 // Replace relaces a message for another, atomically, possibly in another mailbox,

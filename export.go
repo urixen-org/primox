@@ -8,7 +8,7 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/store"
 )
 
 func cmdExportMaildir(c *cmd) {

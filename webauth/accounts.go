@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/store"
 )
 
 // AccountAuth is for user accounts, with username/password, and sessions stored in

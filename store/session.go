@@ -13,9 +13,9 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/metrics"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
+	"github.com/urixen-org/primox/metrics"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
 )
 
 const sessionsPerAccount = 100            // We remove the oldest when 100th is added.

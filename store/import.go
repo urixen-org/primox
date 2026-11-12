@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/mlog"
 )
 
 // MsgSource is implemented by readers for mailbox file formats.

@@ -7,9 +7,9 @@ import (
 	"log/slog"
 	"net/textproto"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/smtp"
 )
 
 var (

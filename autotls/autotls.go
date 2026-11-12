@@ -36,9 +36,9 @@ import (
 
 	"github.com/mjl-/autocert"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/moxvar"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/moxvar"
 )
 
 var (

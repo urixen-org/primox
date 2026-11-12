@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/mjl-/mox/metrics"
+	"github.com/urixen-org/primox/metrics"
 )
 
 func TestMain(m *testing.M) {

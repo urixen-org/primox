@@ -11,9 +11,9 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"rsc.io/qr"
 
-	"github.com/mjl-/mox/admin"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/admin"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/smtp"
 )
 
 var (

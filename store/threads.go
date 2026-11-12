@@ -14,9 +14,9 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/moxio"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/moxio"
 )
 
 // Assign a new/incoming message to a thread. Message does not yet have an ID. If

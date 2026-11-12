@@ -4,8 +4,8 @@ import (
 	"io/fs"
 	"net/http"
 
-	"github.com/mjl-/mox/mox-"
-	webuiaccount "github.com/mjl-/mox/webui/account"
+	"github.com/urixen-org/primox/mox-"
+	webuiaccount "github.com/urixen-org/primox/webui/account"
 )
 
 // svelteHandler serves the SvelteKit SPA embedded in the binary. It is always

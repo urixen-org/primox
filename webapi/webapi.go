@@ -5,7 +5,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/mjl-/mox/webhook"
+	"github.com/urixen-org/primox/webhook"
 )
 
 // todo future: we can have text and html templates, let submitters reference them along with parameters, and compose the message bodies ourselves.

@@ -49,10 +49,10 @@ import (
 
 	"github.com/mjl-/sherpa"
 
-	"github.com/mjl-/mox/metrics"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/metrics"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/store"
 )
 
 // Delay before responding in case of bad authentication attempt.

@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/mjl-/mox/dsn"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/queue"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/dsn"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/queue"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/store"
 )
 
 // compose dsn message and add it to the queue for delivery to rcptTo.

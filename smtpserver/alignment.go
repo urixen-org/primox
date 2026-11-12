@@ -3,12 +3,12 @@ package smtpserver
 import (
 	"context"
 
-	"github.com/mjl-/mox/dkim"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/publicsuffix"
-	"github.com/mjl-/mox/spf"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/dkim"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/publicsuffix"
+	"github.com/urixen-org/primox/spf"
+	"github.com/urixen-org/primox/store"
 )
 
 // Alignment compares the msgFromDomain with the dkim and spf results, and returns

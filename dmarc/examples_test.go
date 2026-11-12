@@ -7,11 +7,11 @@ import (
 	"net"
 	"strings"
 
-	"github.com/mjl-/mox/dkim"
-	"github.com/mjl-/mox/dmarc"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/spf"
+	"github.com/urixen-org/primox/dkim"
+	"github.com/urixen-org/primox/dmarc"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/spf"
 )
 
 func ExampleLookup() {

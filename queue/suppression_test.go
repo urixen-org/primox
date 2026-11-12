@@ -3,8 +3,8 @@ package queue
 import (
 	"testing"
 
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/webapi"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/webapi"
 )
 
 func TestSuppression(t *testing.T) {

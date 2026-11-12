@@ -3,7 +3,7 @@ package smtpserver
 import (
 	"fmt"
 
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/smtp"
 )
 
 func xcheckf(err error, format string, args ...any) {

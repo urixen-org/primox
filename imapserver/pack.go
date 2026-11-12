@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/mlog"
 )
 
 type token interface {

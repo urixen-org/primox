@@ -13,9 +13,9 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/text/secure/precis"
 
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/store"
 )
 
 // Admin is for admin logins, with authentication by password, and sessions only

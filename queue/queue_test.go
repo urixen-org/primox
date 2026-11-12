@@ -25,16 +25,16 @@ import (
 	"github.com/mjl-/adns"
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/mtastsdb"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/smtpclient"
-	"github.com/mjl-/mox/store"
-	"github.com/mjl-/mox/tlsrpt"
-	"github.com/mjl-/mox/tlsrptdb"
-	"github.com/mjl-/mox/webhook"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/mtastsdb"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/smtpclient"
+	"github.com/urixen-org/primox/store"
+	"github.com/urixen-org/primox/tlsrpt"
+	"github.com/urixen-org/primox/tlsrptdb"
+	"github.com/urixen-org/primox/webhook"
 )
 
 var ctxbg = context.Background()

@@ -10,8 +10,8 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/dmarcrpt"
-	"github.com/mjl-/mox/dns"
+	"github.com/urixen-org/primox/dmarcrpt"
+	"github.com/urixen-org/primox/dns"
 )
 
 var (

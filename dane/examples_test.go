@@ -8,8 +8,8 @@ import (
 
 	"github.com/mjl-/adns"
 
-	"github.com/mjl-/mox/dane"
-	"github.com/mjl-/mox/dns"
+	"github.com/urixen-org/primox/dane"
+	"github.com/urixen-org/primox/dns"
 )
 
 func ExampleDial() {

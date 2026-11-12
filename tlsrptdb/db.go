@@ -9,9 +9,9 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/moxvar"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/moxvar"
 )
 
 var (

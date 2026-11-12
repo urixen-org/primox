@@ -12,10 +12,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mjl-/mox/imapclient"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/imapclient"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/store"
 )
 
 // Fuzz the server. For each fuzz string, we set up servers in various connection states, and write the string as command.

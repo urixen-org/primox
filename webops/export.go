@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/store"
 )
 
 // Export is used by webmail and webaccount to export messages of one or

@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/smtp"
 )
 
 func ExampleDecodeReader() {

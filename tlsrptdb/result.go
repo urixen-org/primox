@@ -7,8 +7,8 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/tlsrpt"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/tlsrpt"
 )
 
 // TLSResult is stored in the database to track TLS results per policy domain, day

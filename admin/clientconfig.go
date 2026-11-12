@@ -5,9 +5,9 @@ import (
 	"maps"
 	"slices"
 
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mox-"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mox-"
 )
 
 type TLSMode uint8

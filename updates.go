@@ -14,8 +14,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/updates"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/updates"
 )
 
 func cmdUpdatesAddSigned(c *cmd) {

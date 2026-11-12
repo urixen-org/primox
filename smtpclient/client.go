@@ -45,14 +45,14 @@ import (
 
 	"github.com/mjl-/adns"
 
-	"github.com/mjl-/mox/dane"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/moxio"
-	"github.com/mjl-/mox/sasl"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/stub"
-	"github.com/mjl-/mox/tlsrpt"
+	"github.com/urixen-org/primox/dane"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/moxio"
+	"github.com/urixen-org/primox/sasl"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/stub"
+	"github.com/urixen-org/primox/tlsrpt"
 )
 
 // todo future: add function to deliver message to multiple recipients. requires more elaborate return value, indicating success per message: some recipients may succeed, others may fail, and we should still deliver. to prevent backscatter, we also sometimes don't allow multiple recipients. ../rfc/5321:1144

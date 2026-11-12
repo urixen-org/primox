@@ -104,7 +104,7 @@ instructions below.
   IMAP-related feature, you may also have to add similar functionality to the
   webmail interface.
 - Write documentation so packages stay readable at
-  https://pkg.go.dev/github.com/mjl-/mox.
+  https://pkg.go.dev/github.com/urixen-org/primox.
 - Keep mechanisms as simple, standalone and with as few machinations as
   possible. Automate where possible. Don't add dependencies on external services.
   This helps long-term maintainability. For example, the "help" output of commands

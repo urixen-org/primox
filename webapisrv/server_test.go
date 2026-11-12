@@ -19,12 +19,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/queue"
-	"github.com/mjl-/mox/store"
-	"github.com/mjl-/mox/webapi"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/queue"
+	"github.com/urixen-org/primox/store"
+	"github.com/urixen-org/primox/webapi"
 )
 
 var ctxbg = context.Background()

@@ -342,7 +342,7 @@ Per-account suppression lists, automatically managed based on SMTP status codes
 and DSN messages, protect the reputation of your mail server.
 
 For API documentation and examples of the webapi and webhooks, see
-https://pkg.go.dev/github.com/mjl-/mox/webapi/. Earlier mox versions can be
+https://pkg.go.dev/github.com/urixen-org/primox/webapi/. Earlier mox versions can be
 selected in the top left (at the time of writing).
 
 The mox webapi endpoint at /webapi/v0/ lists available methods and links to
@@ -523,7 +523,7 @@ internals. See the example
 the repository.
 
 Mox has configurable log levels, per
-[functional package](https://pkg.go.dev/github.com/mjl-/mox#section-directories).
+[functional package](https://pkg.go.dev/github.com/urixen-org/primox#section-directories).
 Mox logs in structured [logfmt](https://brandur.org/logfmt) format, which is
 easy to work with (parse, filter, derive metrics from). Mox also includes three
 trace-level logs, for SMTP and IMAP4: trace, traceauth (logs sensitive

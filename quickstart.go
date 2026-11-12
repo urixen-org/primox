@@ -29,16 +29,16 @@ import (
 
 	"github.com/mjl-/sconf"
 
-	"github.com/mjl-/mox/admin"
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/dnsbl"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/publicsuffix"
-	"github.com/mjl-/mox/rdap"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/admin"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/dnsbl"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/publicsuffix"
+	"github.com/urixen-org/primox/rdap"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/store"
 	"slices"
 )
 

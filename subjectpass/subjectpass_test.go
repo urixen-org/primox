@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/smtp"
 )
 
 func TestSubjectPass(t *testing.T) {

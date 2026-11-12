@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/mlog"
 )
 
 var ctxbg = context.Background()

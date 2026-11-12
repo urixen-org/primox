@@ -9,9 +9,9 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/webapi"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/webapi"
 )
 
 // todo: we should be processing spam complaints and add addresses to the list.

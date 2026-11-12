@@ -10,8 +10,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/mjl-/mox/admin"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/admin"
+	"github.com/urixen-org/primox/smtp"
 )
 
 // Apple software isn't good at autoconfig/autodiscovery, but it can import a

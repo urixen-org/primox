@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/dnsbl"
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/dnsbl"
+	"github.com/urixen-org/primox/mlog"
 )
 
 var dnsblHealth = struct {

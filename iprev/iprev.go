@@ -11,9 +11,9 @@ import (
 	"slices"
 	"time"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/stub"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/stub"
 )
 
 var xlog = mlog.New("iprev", nil)

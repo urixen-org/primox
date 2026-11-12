@@ -25,17 +25,17 @@ import (
 
 	"github.com/mjl-/sconf"
 
-	"github.com/mjl-/mox/admin"
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/dkim"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/junk"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/moxvar"
-	"github.com/mjl-/mox/queue"
-	"github.com/mjl-/mox/smtpserver"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/admin"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/dkim"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/junk"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/moxvar"
+	"github.com/urixen-org/primox/queue"
+	"github.com/urixen-org/primox/smtpserver"
+	"github.com/urixen-org/primox/store"
 )
 
 func cmdLocalserve(c *cmd) {

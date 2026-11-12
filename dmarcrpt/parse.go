@@ -13,9 +13,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/moxio"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/moxio"
 )
 
 var ErrNoReport = errors.New("no dmarc aggregate report found in message")

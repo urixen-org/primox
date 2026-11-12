@@ -4,8 +4,8 @@ import (
 	"net"
 	"strings"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/message"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/message"
 )
 
 // ../rfc/7208:2083

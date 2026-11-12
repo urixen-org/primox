@@ -10,12 +10,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/dsn"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/smtpclient"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/dsn"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/smtpclient"
+	"github.com/urixen-org/primox/store"
 )
 
 // We won't be dialing remote servers. We just connect the smtp port of the first

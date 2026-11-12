@@ -15,7 +15,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/mlog"
 )
 
 // WebappFile serves a merged HTML and JS webapp as a single compressed, cacheable

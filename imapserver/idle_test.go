@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mjl-/mox/imapclient"
+	"github.com/urixen-org/primox/imapclient"
 )
 
 func TestIdle(t *testing.T) {

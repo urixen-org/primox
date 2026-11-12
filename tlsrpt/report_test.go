@@ -15,7 +15,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/mlog"
 )
 
 var pkglog = mlog.New("tlsrpt", nil)

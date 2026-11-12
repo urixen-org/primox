@@ -25,12 +25,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/moxio"
-	"github.com/mjl-/mox/publicsuffix"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/stub"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/moxio"
+	"github.com/urixen-org/primox/publicsuffix"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/stub"
 	"slices"
 )
 

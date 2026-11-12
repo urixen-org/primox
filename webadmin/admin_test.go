@@ -22,14 +22,14 @@ import (
 
 	"github.com/mjl-/sherpa"
 
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/mtasts"
-	"github.com/mjl-/mox/queue"
-	"github.com/mjl-/mox/store"
-	"github.com/mjl-/mox/webauth"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/mtasts"
+	"github.com/urixen-org/primox/queue"
+	"github.com/urixen-org/primox/store"
+	"github.com/urixen-org/primox/webauth"
 )
 
 var ctxbg = context.Background()

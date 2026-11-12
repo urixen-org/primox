@@ -22,18 +22,18 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/admin"
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/imapserver"
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/metrics"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/queue"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/store"
-	"github.com/mjl-/mox/webapi"
+	"github.com/urixen-org/primox/admin"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/imapserver"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/metrics"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/queue"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/store"
+	"github.com/urixen-org/primox/webapi"
 )
 
 // ctl represents a connection to the ctl unix domain socket of a running mox instance.

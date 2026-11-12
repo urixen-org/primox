@@ -88,7 +88,7 @@ After starting, you can access the admin web interface on internal IPs.
 # Download
 
 Download a mox binary from
-https://beta.gobuilds.org/github.com/mjl-/mox@latest/linux-amd64-latest/.
+https://beta.gobuilds.org/github.com/urixen-org/primox@latest/linux-amd64-latest/.
 
 Symlink or rename it to "mox".
 

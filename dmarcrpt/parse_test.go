@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/mlog"
 )
 
 var pkglog = mlog.New("dmarcrpt", nil)

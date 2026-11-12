@@ -13,12 +13,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mjl-/mox/dmarcrpt"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/moxio"
-	"github.com/mjl-/mox/queue"
+	"github.com/urixen-org/primox/dmarcrpt"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/moxio"
+	"github.com/urixen-org/primox/queue"
 	"slices"
 )
 

@@ -13,8 +13,8 @@ import (
 
 	"github.com/mjl-/adns"
 
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/stub"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/stub"
 )
 
 // todo future: replace with a dnssec capable resolver

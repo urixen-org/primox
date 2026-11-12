@@ -25,10 +25,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
 )
 
 func recvid(r *http.Request) string {

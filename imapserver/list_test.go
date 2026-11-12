@@ -3,8 +3,8 @@ package imapserver
 import (
 	"testing"
 
-	"github.com/mjl-/mox/imapclient"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/imapclient"
+	"github.com/urixen-org/primox/store"
 )
 
 func TestListBasic(t *testing.T) {

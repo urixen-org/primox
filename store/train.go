@@ -10,10 +10,10 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/junk"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/junk"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
 )
 
 // ErrNoJunkFilter indicates user did not configure/enable a junk filter.

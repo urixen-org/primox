@@ -3,7 +3,7 @@ package imapserver
 import (
 	"testing"
 
-	"github.com/mjl-/mox/imapclient"
+	"github.com/urixen-org/primox/imapclient"
 )
 
 func TestUnsubscribe(t *testing.T) {

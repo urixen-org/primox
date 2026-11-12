@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/smtp"
 )
 
 func tcompare(t *testing.T, got, exp any) {

@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
 )
 
 var ErrNoRegistration = errors.New("registration date not found")

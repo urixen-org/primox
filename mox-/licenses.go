@@ -25,7 +25,7 @@ func LicensesWrite(dst io.Writer) error {
 		return nil
 	}
 
-	if _, err := fmt.Fprintf(dst, "# github.com/mjl-/mox/LICENSE\n\n"); err != nil {
+	if _, err := fmt.Fprintf(dst, "# github.com/urixen-org/primox/LICENSE\n\n"); err != nil {
 		return err
 	}
 	if err := copyFile("LICENSE.MIT"); err != nil {

@@ -38,15 +38,15 @@ import (
 
 	"github.com/mjl-/sconf"
 
-	"github.com/mjl-/mox/autotls"
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/dkim"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/moxio"
-	"github.com/mjl-/mox/mtasts"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/autotls"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/dkim"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/moxio"
+	"github.com/urixen-org/primox/mtasts"
+	"github.com/urixen-org/primox/smtp"
 )
 
 var pkglog = mlog.New("mox", nil)

@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/smtp"
 )
 
 func LocalserveNeedsError(lp smtp.Localpart) (code int, timeout bool) {

@@ -17,12 +17,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/imapclient"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/sasl"
-	"github.com/mjl-/mox/smtpclient"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/imapclient"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/sasl"
+	"github.com/urixen-org/primox/smtpclient"
 )
 
 func tcheck(t *testing.T, err error, errmsg string) {

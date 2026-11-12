@@ -5,9 +5,9 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/imapclient"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/imapclient"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/store"
 )
 
 func TestCopy(t *testing.T) {

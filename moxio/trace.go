@@ -4,7 +4,7 @@ import (
 	"io"
 	"log/slog"
 
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/mlog"
 )
 
 type TraceWriter struct {

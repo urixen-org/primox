@@ -9,9 +9,9 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/metrics"
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/metrics"
+	"github.com/urixen-org/primox/mlog"
 )
 
 // We process messages in database transactions in batches. Otherwise, for accounts

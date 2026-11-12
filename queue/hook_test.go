@@ -13,11 +13,11 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/dsn"
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/store"
-	"github.com/mjl-/mox/webhook"
+	"github.com/urixen-org/primox/dsn"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/store"
+	"github.com/urixen-org/primox/webhook"
 )
 
 // Test webhooks for incoming message that is not related to outgoing deliveries.

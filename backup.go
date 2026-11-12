@@ -18,13 +18,13 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/dmarcdb"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/moxvar"
-	"github.com/mjl-/mox/mtastsdb"
-	"github.com/mjl-/mox/queue"
-	"github.com/mjl-/mox/store"
-	"github.com/mjl-/mox/tlsrptdb"
+	"github.com/urixen-org/primox/dmarcdb"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/moxvar"
+	"github.com/urixen-org/primox/mtastsdb"
+	"github.com/urixen-org/primox/queue"
+	"github.com/urixen-org/primox/store"
+	"github.com/urixen-org/primox/tlsrptdb"
 )
 
 func xbackupctl(ctx context.Context, xctl *ctl) {

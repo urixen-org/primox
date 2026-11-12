@@ -24,12 +24,12 @@ import (
 
 	"github.com/mjl-/sconf"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/sasl"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/smtpclient"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/sasl"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/smtpclient"
 )
 
 var submitconf struct {

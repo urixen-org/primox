@@ -16,7 +16,7 @@ import (
 
 	"golang.org/x/net/websocket"
 
-	"github.com/mjl-/mox/mox-"
+	"github.com/urixen-org/primox/mox-"
 )
 
 func tcheck(t *testing.T, err error, msg string) {

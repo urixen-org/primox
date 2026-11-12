@@ -67,17 +67,17 @@ import (
 	"github.com/mjl-/bstore"
 	"github.com/mjl-/flate"
 
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/junk"
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/metrics"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/moxio"
-	"github.com/mjl-/mox/moxvar"
-	"github.com/mjl-/mox/ratelimit"
-	"github.com/mjl-/mox/scram"
-	"github.com/mjl-/mox/store"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/junk"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/metrics"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/moxio"
+	"github.com/urixen-org/primox/moxvar"
+	"github.com/urixen-org/primox/ratelimit"
+	"github.com/urixen-org/primox/scram"
+	"github.com/urixen-org/primox/store"
 )
 
 var (

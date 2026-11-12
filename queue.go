@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mjl-/mox/queue"
+	"github.com/urixen-org/primox/queue"
 )
 
 func xctlwriteJSON(ctl *ctl, v any) {

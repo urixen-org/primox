@@ -14,9 +14,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/smtp"
 )
 
 // Message represents a DSN message, with basic message headers, human-readable text,

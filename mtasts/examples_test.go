@@ -6,8 +6,8 @@ import (
 	"log"
 	"log/slog"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mtasts"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mtasts"
 )
 
 func ExampleGet() {

@@ -17,7 +17,7 @@ import (
 
 	"go.etcd.io/bbolt"
 
-	"github.com/mjl-/mox/message"
+	"github.com/urixen-org/primox/message"
 )
 
 func (f *Filter) tokenizeMail(path string) (bool, map[string]struct{}, error) {

@@ -3,8 +3,8 @@ package store
 import (
 	"os"
 
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
 )
 
 // CreateMessageTemp creates a temporary file, e.g. for delivery. The is created in

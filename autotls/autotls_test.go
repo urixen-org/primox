@@ -11,8 +11,8 @@ import (
 
 	"github.com/mjl-/autocert"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
 )
 
 func TestAutotls(t *testing.T) {

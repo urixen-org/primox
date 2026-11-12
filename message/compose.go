@@ -10,7 +10,7 @@ import (
 	"net/mail"
 	"strings"
 
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/smtp"
 )
 
 var (

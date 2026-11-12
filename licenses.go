@@ -4,7 +4,7 @@ import (
 	"embed"
 	"os"
 
-	"github.com/mjl-/mox/mox-"
+	"github.com/urixen-org/primox/mox-"
 )
 
 //go:embed LICENSE.MIT LICENSE.MPLv2.0 licenses/*

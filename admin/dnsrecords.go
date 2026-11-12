@@ -12,14 +12,14 @@ import (
 
 	"github.com/mjl-/adns"
 
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/dkim"
-	"github.com/mjl-/mox/dmarc"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/spf"
-	"github.com/mjl-/mox/tlsrpt"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/dkim"
+	"github.com/urixen-org/primox/dmarc"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/spf"
+	"github.com/urixen-org/primox/tlsrpt"
 	"slices"
 )
 

@@ -30,7 +30,7 @@ See [Features](features/) for the details, including roadmap.
 
 The latest release is v0.0.17, released on 2026-08-19, see [release
 notes](https://github.com/urixen-org/primox/releases/tag/v0.0.17), [download
-binaries](https://beta.gobuilds.org/github.com/mjl-/mox@latest/linux-amd64-latest/),
+binaries](https://beta.gobuilds.org/github.com/urixen-org/primox@latest/linux-amd64-latest/),
 or see [all releases](https://github.com/urixen-org/primox/releases).
 
 ## News
@@ -67,7 +67,7 @@ server. See the demo below, or continue reading at [Install](install/).
 </video>
 
 Not ready for a full setup yet? Try mox in less than a minute:
-[download](https://beta.gobuilds.org/github.com/mjl-/mox) and run "mox
+[download](https://beta.gobuilds.org/github.com/urixen-org/primox) and run "mox
 localserve". It serves a local-only SMTP/IMAP/Webmail/etc for testing and
 development. No setup required.
 

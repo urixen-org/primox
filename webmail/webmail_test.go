@@ -25,12 +25,12 @@ import (
 
 	"github.com/mjl-/sherpa"
 
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/moxio"
-	"github.com/mjl-/mox/store"
-	"github.com/mjl-/mox/webauth"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/moxio"
+	"github.com/urixen-org/primox/store"
+	"github.com/urixen-org/primox/webauth"
 )
 
 var ctxbg = context.Background()

@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/moxvar"
-	"github.com/mjl-/mox/updates"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/moxvar"
+	"github.com/urixen-org/primox/updates"
 )
 
 // StoreLastKnown stores the the last known version. Future update checks compare

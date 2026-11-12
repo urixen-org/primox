@@ -6,8 +6,8 @@ import (
 	"log/slog"
 	"strings"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/tlsrpt"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/tlsrpt"
 )
 
 func ExampleLookup() {

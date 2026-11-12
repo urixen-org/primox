@@ -4,7 +4,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/mjl-/mox/dns"
+	"github.com/urixen-org/primox/dns"
 )
 
 func TestReceived(t *testing.T) {

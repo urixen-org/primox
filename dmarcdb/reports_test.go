@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mjl-/mox/dmarcrpt"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mox-"
+	"github.com/urixen-org/primox/dmarcrpt"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mox-"
 )
 
 var ctxbg = context.Background()

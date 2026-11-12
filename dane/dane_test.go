@@ -22,8 +22,8 @@ import (
 
 	"github.com/mjl-/adns"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
 )
 
 func tcheckf(t *testing.T, err error, format string, args ...any) {

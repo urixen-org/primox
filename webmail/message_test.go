@@ -3,7 +3,7 @@ package webmail
 import (
 	"testing"
 
-	"github.com/mjl-/mox/dns"
+	"github.com/urixen-org/primox/dns"
 )
 
 func TestParseListPostAddress(t *testing.T) {

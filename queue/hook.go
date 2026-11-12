@@ -20,17 +20,17 @@ import (
 
 	"github.com/mjl-/bstore"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/dsn"
-	"github.com/mjl-/mox/message"
-	"github.com/mjl-/mox/metrics"
-	"github.com/mjl-/mox/mlog"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/moxvar"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/store"
-	"github.com/mjl-/mox/webhook"
-	"github.com/mjl-/mox/webops"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/dsn"
+	"github.com/urixen-org/primox/message"
+	"github.com/urixen-org/primox/metrics"
+	"github.com/urixen-org/primox/mlog"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/moxvar"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/store"
+	"github.com/urixen-org/primox/webhook"
+	"github.com/urixen-org/primox/webops"
 )
 
 var (

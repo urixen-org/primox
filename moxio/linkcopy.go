@@ -6,7 +6,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/mlog"
 )
 
 // LinkOrCopy attempts to make a hardlink dst. If that fails, it will try to do a

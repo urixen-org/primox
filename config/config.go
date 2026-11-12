@@ -11,11 +11,11 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/mjl-/mox/autotls"
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/junk"
-	"github.com/mjl-/mox/mtasts"
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/autotls"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/junk"
+	"github.com/urixen-org/primox/mtasts"
+	"github.com/urixen-org/primox/smtp"
 )
 
 // todo: better default values, so less has to be specified in the config file.

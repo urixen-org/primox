@@ -12,10 +12,10 @@ import (
 
 	"github.com/mjl-/sconf"
 
-	"github.com/mjl-/mox/config"
-	"github.com/mjl-/mox/mox-"
-	"github.com/mjl-/mox/smtp"
-	"github.com/mjl-/mox/webhook"
+	"github.com/urixen-org/primox/config"
+	"github.com/urixen-org/primox/mox-"
+	"github.com/urixen-org/primox/smtp"
+	"github.com/urixen-org/primox/webhook"
 )
 
 func cmdExample(c *cmd) {

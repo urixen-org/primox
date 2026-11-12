@@ -1,4 +1,4 @@
-module github.com/mjl-/mox
+module github.com/urixen-org/primox
 
 go 1.26.0
 

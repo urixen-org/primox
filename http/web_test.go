@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/mjl-/mox/mox-"
+	"github.com/urixen-org/primox/mox-"
 )
 
 func TestServeHTTP(t *testing.T) {

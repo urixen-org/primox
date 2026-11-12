@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/mail"
 
-	"github.com/mjl-/mox/smtp"
+	"github.com/urixen-org/primox/smtp"
 )
 
 // ParseAddressList parses a string as an address list header value

@@ -1,7 +1,7 @@
 package store
 
 import (
-	"github.com/mjl-/mox/spf"
+	"github.com/urixen-org/primox/spf"
 )
 
 var spfValidations = map[spf.Status]Validation{

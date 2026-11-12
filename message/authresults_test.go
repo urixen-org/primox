@@ -3,7 +3,7 @@ package message
 import (
 	"testing"
 
-	"github.com/mjl-/mox/dns"
+	"github.com/urixen-org/primox/dns"
 )
 
 func TestAuthResultsPack(t *testing.T) {

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/publicsuffix"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/publicsuffix"
 )
 
 func ExampleLookup() {

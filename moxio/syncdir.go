@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/mlog"
 )
 
 // SyncDir opens a directory and syncs its contents to disk.

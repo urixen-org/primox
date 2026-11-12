@@ -7,8 +7,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/mjl-/mox/dns"
-	"github.com/mjl-/mox/mlog"
+	"github.com/urixen-org/primox/dns"
+	"github.com/urixen-org/primox/mlog"
 )
 
 // DialHook can be used during tests to override the regular dialer from being used.
