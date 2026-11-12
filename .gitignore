@@ -31,3 +31,8 @@
 # SvelteKit frontend (webui)
 /webui/node_modules/
 /webui/.svelte-kit/
+
+# SvelteKit frontend (webui-admin)
+/webui-admin/node_modules/
+/webui-admin/.svelte-kit/
+/webui-admin/build/
