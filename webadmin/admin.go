@@ -25,7 +25,6 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"path/filepath"
 	"reflect"
 	"runtime"
 	"runtime/debug"
@@ -74,20 +73,6 @@ var pkglog = mlog.New("webadmin", nil)
 
 //go:embed api.json
 var adminapiJSON []byte
-
-//go:embed admin.html
-var adminHTML []byte
-
-//go:embed admin.js
-var adminJS []byte
-
-var webadminFile = &mox.WebappFile{
-	HTML:       adminHTML,
-	JS:         adminJS,
-	HTMLPath:   filepath.FromSlash("webadmin/admin.html"),
-	JSPath:     filepath.FromSlash("webadmin/admin.js"),
-	CustomStem: "webadmin",
-}
 
 var adminDoc = mustParseAPI("admin", adminapiJSON)
 

@@ -27,6 +27,26 @@ export const formatQuotaSize = (v: number): string => {
   return "" + v;
 };
 
+// parseQuotaSize parses values like "1g", "500m", "2t", "1024k", or plain bytes.
+export const parseQuotaSize = (s: string): number => {
+  s = s.trim();
+  if (!s) {
+    return 0;
+  }
+  const last = s[s.length - 1].toLowerCase();
+  const units: { [k: string]: number } = {
+    k: 1024,
+    m: 1024 ** 2,
+    g: 1024 ** 3,
+    t: 1024 ** 4,
+  };
+  if (last in units) {
+    const n = parseFloat(s.slice(0, -1));
+    return Math.round(n * units[last]);
+  }
+  return parseInt(s) || 0;
+};
+
 export const formatSize = (v: number): string => {
   const units = ["B", "KB", "MB", "GB", "TB"];
   let n = v;
