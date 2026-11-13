@@ -785,27 +785,29 @@ export const reconnect = async () => {
 	await connect()
 }
 
-// --- Message opening and actions ---
-
 export const openMessage = async (mi: MessageItem) => {
 	const seq = ++openSeq
 	activeMessage.set(mi)
 	parsedMessage.set(null)
 	messageError.set('')
-	messageLoading.set(true)
+  messageLoading.set(true)
+	
 	updateHash()
 	try {
-		const pm = await client.ParsedMessage(mi.Message.ID)
+    const pm = await client.ParsedMessage(mi.Message.ID)
+		
 		if (seq === openSeq) {
-			parsedMessage.set(pm)
+      parsedMessage.set(pm)
+			
 		}
-	} catch (err) {
+  } catch (err) {
+   
 		if (seq === openSeq) {
 			messageError.set(errmsg(err))
 		}
 	} finally {
 		if (seq === openSeq) {
-			messageLoading.set(false)
+      messageLoading.set(false)
 		}
 	}
 	if (seq !== openSeq) {
