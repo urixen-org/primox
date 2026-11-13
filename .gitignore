@@ -33,3 +33,5 @@
 /webui/account/.svelte-kit/
 /webui/admin/node_modules/
 /webui/admin/.svelte-kit/
+/webui/webmail/node_modules/
+/webui/webmail/.svelte-kit/

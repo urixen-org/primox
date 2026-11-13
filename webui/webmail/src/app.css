@@ -1,0 +1,651 @@
+/* Webmail-specific layout on top of @mox/ui/app.css. */
+
+html,
+body {
+	height: 100%;
+}
+
+.wm {
+	display: flex;
+	flex-direction: column;
+	height: 100dvh;
+	min-height: 0;
+}
+
+/* Top bar */
+
+.wm-top {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 0.45rem 0.6rem;
+	border-bottom: 1px solid var(--border);
+	background: var(--bg-mild);
+}
+
+.wm-brand {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.wm-logo {
+	font-size: 1.15rem;
+}
+
+.wm-search {
+	display: flex;
+	flex: 1 1 22rem;
+	gap: 0.25rem;
+	min-width: 12rem;
+}
+
+.wm-search input {
+	flex: 1 1 auto;
+	min-width: 6rem;
+}
+
+.wm-topcontrols {
+	display: flex;
+	gap: 0.25rem;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.wm-account {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin-left: auto;
+}
+
+.wm-address {
+	font-size: 0.85rem;
+	color: var(--fg-mild);
+	max-width: 16rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.wm-disconnected {
+	color: #9a6700;
+	background: #fff8c5;
+	border: 1px solid #f0e08a;
+	border-radius: var(--radius);
+	padding: 0.05em 0.4em;
+	font-size: 0.85rem;
+}
+
+button.primary {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: #fff;
+}
+
+button.primary:hover:not(:disabled) {
+	background: #0860ca;
+	border-color: #0860ca;
+}
+
+button.danger {
+	color: var(--danger);
+}
+
+/* Three panes */
+
+.wm-body {
+	flex: 1 1 auto;
+	display: grid;
+	grid-template-columns: 13rem minmax(20rem, 30rem) minmax(0, 1fr);
+	min-height: 0;
+}
+
+.wm-mailboxes {
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+	border-right: 1px solid var(--border);
+	background: var(--bg-mild);
+}
+
+.wm-panelhead {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.45rem 0.6rem;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--fg-mild);
+	border-bottom: 1px solid var(--border);
+}
+
+.wm-mblist {
+	flex: 1 1 auto;
+	overflow-y: auto;
+	padding: 0.25rem;
+}
+
+.wm-mbrow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	width: 100%;
+	text-align: left;
+	border: 0;
+	background: transparent;
+	padding: 0.3rem 0.45rem;
+	border-radius: var(--radius);
+	font-size: 0.92rem;
+}
+
+.wm-mbrow:hover {
+	background: var(--bg);
+}
+
+.wm-mbrow.active {
+	background: var(--accent);
+	color: #fff;
+}
+
+.wm-mbrow.active .badge {
+	color: #fff;
+	background: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.4);
+}
+
+.wm-mbname {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.wm-total {
+	font-size: 0.8rem;
+	margin-right: 0.2rem;
+}
+
+.wm-mbactions {
+	border-top: 1px solid var(--border);
+	padding: 0.4rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+}
+
+.wm-mbactions-title {
+	width: 100%;
+	font-size: 0.78rem;
+	color: var(--fg-mild);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Message list */
+
+.wm-list {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	min-height: 0;
+	border-right: 1px solid var(--border);
+}
+
+.wm-listhead {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	padding: 0.35rem 0.45rem;
+	border-bottom: 1px solid var(--border);
+	background: var(--bg-mild);
+}
+
+.wm-listhead button,
+.wm-listhead select {
+	font-size: 0.82rem;
+	padding: 0.15em 0.45em;
+}
+
+.wm-selected-count {
+	font-size: 0.8rem;
+}
+
+.wm-listerr {
+	padding: 0.4rem 0.6rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.wm-msglist {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+}
+
+.wm-listempty {
+	padding: 0.75rem;
+	text-align: center;
+}
+
+.wm-loadmore {
+	display: block;
+	margin: 0.75rem auto;
+}
+
+.wm-msgrow {
+	display: grid;
+	grid-template-columns: auto 2rem minmax(6rem, 10rem) minmax(0, 1fr) auto;
+	align-items: baseline;
+	gap: 0.4rem;
+	padding: 0.35rem 0.5rem;
+	border-bottom: 1px solid var(--border);
+	cursor: pointer;
+	font-size: 0.9rem;
+}
+
+.wm-msgrow:hover {
+	background: var(--bg-mild);
+}
+
+.wm-msgrow.active {
+	background: #ddf4ff;
+}
+
+.wm-msgrow.selected {
+	background: #eef6ff;
+}
+
+.wm-msgrow.unread {
+	font-weight: 600;
+}
+
+.wm-flags {
+	white-space: nowrap;
+	overflow: hidden;
+	color: var(--fg-mild);
+	font-size: 0.85rem;
+}
+
+.wm-unreaddot {
+	display: inline-block;
+	width: 0.55em;
+	height: 0.55em;
+	border-radius: 50%;
+	background: var(--accent);
+	vertical-align: middle;
+}
+
+.wm-msgfrom {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.wm-msgsubject {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.wm-preview {
+	font-weight: 400;
+	color: var(--fg-mild);
+}
+
+.wm-mbtag {
+	font-size: 0.72rem;
+	margin-right: 0.3rem;
+}
+
+.wm-msgdate {
+	font-size: 0.78rem;
+	color: var(--fg-mild);
+	white-space: nowrap;
+}
+
+/* Message view */
+
+.wm-view {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	min-height: 0;
+	background: var(--bg);
+}
+
+.wm-viewempty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.wm-viewhead {
+	flex: 0 0 auto;
+	max-height: 55%;
+	overflow-y: auto;
+	padding: 0.6rem 0.8rem;
+	border-bottom: 1px solid var(--border);
+	background: var(--bg-mild);
+}
+
+.wm-viewtitle {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.wm-viewtitle h1 {
+	font-size: 1.15rem;
+	margin: 0;
+}
+
+.wm-viewactions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.25rem;
+	margin: 0.5rem 0;
+}
+
+.wm-viewactions button,
+.wm-viewactions select {
+	font-size: 0.82rem;
+	padding: 0.15em 0.45em;
+}
+
+.wm-viewactions button.active {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: #fff;
+}
+
+.wm-viewactions a {
+	font-size: 0.85rem;
+}
+
+.wm-sep {
+	display: inline-block;
+	width: 1px;
+	height: 1.4em;
+	background: var(--border);
+	margin: 0 0.2rem;
+}
+
+.wm-headers {
+	font-size: 0.88rem;
+	width: 100%;
+}
+
+.wm-headers th {
+	width: 6.5rem;
+	color: var(--fg-mild);
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.wm-headers td {
+	word-break: break-word;
+}
+
+.wm-headertoggle {
+	margin-top: 0.3rem;
+}
+
+.wm-headertoggle button {
+	font-size: 0.78rem;
+	padding: 0.1em 0.4em;
+}
+
+.wm-rawheaders {
+	font-size: 0.8rem;
+	max-height: 10rem;
+	overflow: auto;
+	background: var(--bg);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 0.4rem 0.6rem;
+	word-break: break-word;
+}
+
+.wm-attachments {
+	margin-top: 0.4rem;
+	font-size: 0.88rem;
+}
+
+.wm-attachments ul {
+	margin: 0.2rem 0 0;
+}
+
+.wm-attachments li {
+	list-style: none;
+}
+
+.wm-viewbody {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: auto;
+}
+
+.wm-viewbody iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 20rem;
+	border: 0;
+	background: #fff;
+}
+
+.wm-textbody pre {
+	white-space: pre-wrap;
+	word-break: break-word;
+	font-family: inherit;
+	font-size: 0.95rem;
+	padding: 0.75rem 0.9rem;
+	margin: 0;
+}
+
+.wm-viewnote {
+	padding: 0.75rem;
+}
+
+/* Compose */
+
+.wm-composeoverlay {
+	z-index: 20;
+}
+
+.wm-compose {
+	display: flex;
+	flex-direction: column;
+	width: min(60rem, 96vw);
+	height: min(90vh, 60rem);
+	background: var(--bg);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: 0 8px 24px rgba(31, 35, 40, 0.25);
+	overflow: hidden;
+}
+
+.wm-composehead {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.6rem 0.8rem;
+	border-bottom: 1px solid var(--border);
+	background: var(--bg-mild);
+}
+
+.wm-composehead h1 {
+	font-size: 1.1rem;
+	margin: 0;
+}
+
+.wm-composeform {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+	padding: 0.6rem 0.8rem;
+	gap: 0.4rem;
+	overflow-y: auto;
+}
+
+.wm-composerow {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.wm-composerow label {
+	width: 4rem;
+	flex: 0 0 auto;
+	color: var(--fg-mild);
+	font-size: 0.9rem;
+}
+
+.wm-composerow input,
+.wm-composerow select {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.wm-linkbtn {
+	border: 0;
+	background: none;
+	color: var(--accent);
+	padding: 0;
+	font-size: 0.85rem;
+	white-space: nowrap;
+}
+
+.wm-composetext {
+	flex: 1 1 auto;
+	min-height: 12rem;
+	width: 100%;
+	font-family: inherit;
+}
+
+.wm-composefiles {
+	font-size: 0.88rem;
+}
+
+.wm-composefiles ul {
+	margin: 0.2rem 0 0;
+}
+
+.wm-composefiles li {
+	list-style: none;
+}
+
+.wm-composecheck {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.9rem;
+	margin: 0.25rem 0;
+}
+
+.wm-composeactions {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	padding-top: 0.4rem;
+	border-top: 1px solid var(--border);
+}
+
+.wm-fileinput {
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: var(--bg-mild);
+	padding: 0.3em 0.8em;
+	cursor: pointer;
+	font-size: 0.95rem;
+}
+
+.wm-fileinput input {
+	display: none;
+}
+
+.wm-spacer {
+	flex: 1 1 auto;
+}
+
+/* Settings/help dialogs */
+
+.wm-settings {
+	width: min(36rem, 96vw);
+}
+
+.wm-help {
+	width: min(42rem, 96vw);
+}
+
+.wm-help h2 {
+	font-size: 1rem;
+	margin-top: 1rem;
+}
+
+.wm-help code {
+	background: var(--bg-mild);
+	padding: 0.05em 0.25em;
+	border-radius: 4px;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+	.wm-body {
+		grid-template-columns: 11rem minmax(16rem, 24rem) minmax(0, 1fr);
+	}
+
+	.wm-msgrow {
+		grid-template-columns: auto 1.5rem minmax(5rem, 8rem) minmax(0, 1fr) auto;
+	}
+}
+
+@media (max-width: 900px) {
+	.wm-body {
+		grid-template-columns: 12rem minmax(0, 1fr);
+	}
+
+	.wm-view {
+		display: none;
+	}
+
+	.wm-view.wm-viewopen {
+		display: flex;
+		position: fixed;
+		inset: 0;
+		z-index: 5;
+	}
+}
+
+@media (max-width: 640px) {
+	.wm-body {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.wm-mailboxes {
+		display: none;
+	}
+
+	.wm-search {
+		flex-basis: 100%;
+	}
+
+	.wm-account {
+		margin-left: 0;
+	}
+}

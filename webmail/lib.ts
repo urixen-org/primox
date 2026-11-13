@@ -454,7 +454,7 @@ export const loadMsgheaderView = (msgheaderelem: HTMLTableSectionElement, mi: ap
 	const msgenv = mi.Envelope
 	const received = mi.Message.Received
 	const receivedlocal = new Date(received.getTime())
-	// Similar to webmail.ts:/headerTextMildStyle
+	// Similar to the webmail SPA headerTextMildStyle
 	const msgHeaderFieldStyle = css('msgHeaderField', {textAlign: 'right', color: styles.colorMild, whiteSpace: 'nowrap'})
 	const msgAttrStyle = css('msgAttr', {padding: '0px 0.15em', fontSize: '.9em'})
 	dom._kids(msgheaderelem,

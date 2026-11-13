@@ -8,9 +8,10 @@ build0:
 	CGO_ENABLED=0 go vet ./...
 	./gendoc.sh
 	CGO_ENABLED=0 ./genapidoc.sh
-	CGO_ENABLED=0 ./gents.sh webadmin/api.json webui-admin/src/lib/api.ts
-	CGO_ENABLED=0 ./gents.sh webaccount/api.json webui/src/lib/api.ts
+	CGO_ENABLED=0 ./gents.sh webadmin/api.json webui/admin/src/lib/api.ts
+	CGO_ENABLED=0 ./gents.sh webaccount/api.json webui/account/src/lib/api.ts
 	CGO_ENABLED=0 ./gents.sh webmail/api.json webmail/api.ts
+	CGO_ENABLED=0 ./gents.sh webmail/api.json webui/webmail/src/lib/api.ts
 
 build1:
 	# build again, api json files above are embedded and new frontend code generated
@@ -140,9 +141,6 @@ install-js0:
 	-mkdir -p node_modules/.bin
 	npm install --ignore-scripts --save-dev --save-exact typescript@7.0.2 esbuild@v0.28.1
 
-webmail/webmail.js: webmail/webmail.ts webmail/icons.ts webmail/api.ts webmail/lib.ts lib.ts
-	./tsc.sh $@ webmail/webmail.ts webmail/icons.ts webmail/api.ts webmail/lib.ts lib.ts
-
 webmail/msg.js: webmail/msg.ts webmail/api.ts webmail/lib.ts lib.ts
 	./tsc.sh $@ webmail/msg.ts webmail/api.ts webmail/lib.ts lib.ts
 
@@ -157,7 +155,11 @@ webui/admin/build/index.html: webui/admin/package.json webui/admin/svelte.config
 	@test -d webui/admin/node_modules || (cd webui/admin && npm ci --ignore-scripts)
 	cd webui/admin && MOX_BASE_PATH=admin npm run build
 
-frontend: node_modules/.bin/tsc webmail/webmail.js webmail/msg.js webmail/text.js webui/account/build/index.html webui/admin/build/index.html
+webui/webmail/build/index.html: webui/webmail/package.json webui/webmail/svelte.config.js webui/webmail/vite.config.ts webui/webmail/tsconfig.json webui/webmail/src/app.html $(shell find webui/webmail/src webui/shared -type f)
+	@test -d webui/webmail/node_modules || (cd webui/webmail && npm ci --ignore-scripts)
+	cd webui/webmail && MOX_BASE_PATH=webmail npm run build
+
+frontend: node_modules/.bin/tsc webmail/msg.js webmail/text.js webui/account/build/index.html webui/admin/build/index.html webui/webmail/build/index.html
 
 install-apidiff:
 	CGO_ENABLED=0 go install golang.org/x/exp/cmd/apidiff@v0.0.0-20231206192017-f3f8817b8deb

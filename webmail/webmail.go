@@ -63,12 +63,6 @@ type requestInfo struct {
 	Request      *http.Request // For Proto and TLS connection state during message submit.
 }
 
-//go:embed webmail.html
-var webmailHTML []byte
-
-//go:embed webmail.js
-var webmailJS []byte
-
 //go:embed msg.html
 var webmailmsgHTML []byte
 
@@ -147,14 +141,6 @@ func xdbread(ctx context.Context, acc *store.Account, fn func(tx *bstore.Tx)) {
 		return nil
 	})
 	xcheckf(ctx, err, "transaction")
-}
-
-var webmailFile = &mox.WebappFile{
-	HTML:       webmailHTML,
-	JS:         webmailJS,
-	HTMLPath:   filepath.FromSlash("webmail/webmail.html"),
-	JSPath:     filepath.FromSlash("webmail/webmail.js"),
-	CustomStem: "webmail",
 }
 
 func customization() (css, js []byte, err error) {
@@ -270,7 +256,7 @@ func handle(apiHandler http.Handler, isForwarded bool, accountPath string, w htt
 			h := w.Header()
 			h.Set("X-Frame-Options", "deny")
 			h.Set("Referrer-Policy", "same-origin")
-			webmailFile.Serve(ctx, log, w, r)
+			svelteHandler.ServeHTTP(w, r)
 		default:
 			http.Error(w, "405 - method not allowed - use get", http.StatusMethodNotAllowed)
 		}
@@ -303,6 +289,19 @@ func handle(apiHandler http.Handler, isForwarded bool, accountPath string, w htt
 
 		w.Header().Set("Content-Type", "application/javascript; charset=utf-8")
 		serveContentFallback(log, w, r, path, fallback, false)
+		return
+	}
+
+	// The SvelteKit SPA serves the app shell for all non-API, non-data paths:
+	// hashed assets and client-side routes. The shell is public; data is fetched
+	// through the authenticated API and the authenticated SSE connection.
+	if !strings.HasPrefix(r.URL.Path, "/api/") && r.URL.Path != "/export" && r.URL.Path != "/events" && !strings.HasPrefix(r.URL.Path, "/msg/") {
+		switch r.Method {
+		case "GET", "HEAD":
+			svelteHandler.ServeHTTP(w, r)
+		default:
+			http.Error(w, "405 - method not allowed - use get", http.StatusMethodNotAllowed)
+		}
 		return
 	}
 
@@ -662,7 +661,7 @@ func handle(apiHandler http.Handler, isForwarded bool, accountPath string, w htt
 
 	case len(t) == 2 && (t[1] == "msgtext" || t[1] == "msghtml" || t[1] == "msghtmlexternal"):
 		// msg.html has a javascript tag with message data, and javascript to render the
-		// message header like the regular webmail.html and to load the message body in a
+		// message header like the regular webmail SPA and to load the message body in a
 		// separate iframe with a separate request with stronger CSP.
 		acc, _, m, msgr, p, cleanup, ok := xprepare()
 		if !ok {
@@ -726,9 +725,9 @@ func handle(apiHandler http.Handler, isForwarded bool, accountPath string, w htt
 
 	case len(t) == 2 && t[1] == "text":
 		// Returns text.html whichs loads the message data with a javascript tag and
-		// renders just the text content with the same code as webmail.html. Used by the
-		// iframe in the msgtext endpoint. Not used by the regular webmail viewer, it
-		// renders the text itself, with the same shared js code.
+		// renders just the text content with the same shared code as the webmail SPA. Used
+		// by the iframe in the msgtext endpoint. Not used by the regular webmail viewer,
+		// it renders the text itself, with the same shared js code.
 		acc, _, m, msgr, p, cleanup, ok := xprepare()
 		if !ok {
 			return
